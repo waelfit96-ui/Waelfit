@@ -244,6 +244,9 @@
   .gallery figure{position:relative;border-radius:var(--radius);overflow:hidden;margin:0;background:var(--dark)}
   .gallery figure.g-wide{aspect-ratio:3/2}
   .gallery figure.g-tall{aspect-ratio:2/3}
+  .gallery figure.g-full{grid-column:1/-1;width:100%;max-width:720px;justify-self:center;aspect-ratio:1/1}
+  .gallery figure.g-full a{display:block;height:100%}
+  .gallery figure.g-full figcaption{left:auto;bottom:auto;right:12px;top:12px}
   .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
   .gallery figure:hover img{transform:scale(1.05)}
   .gallery figcaption{position:absolute;left:12px;bottom:12px;background:rgba(11,10,16,.75);backdrop-filter:blur(6px);color:#fff;font-size:.78rem;font-weight:600;padding:6px 12px;border-radius:30px}
@@ -643,6 +646,7 @@
     <div class="gallery reveal">
       <figure class="g-wide"><img src="images/wael-online.webp" alt="Wael coaching clients in a live online video session" loading="lazy"><figcaption>Live online coaching</figcaption></figure>
       <figure class="g-tall"><img src="images/wael-award.webp" alt="Wael holding his TUI BLUE Best Employee of the Month and Maker of Happy awards" loading="lazy"><figcaption>Employee of the Month · TUI BLUE</figcaption></figure>
+      <figure class="g-full"><a href="images/client-reviews.webp" target="_blank" rel="noopener" aria-label="Open client reviews full size"><img src="images/client-reviews.webp" alt="Client reviews. Nathaliya, Germany, 5 stars: Wael's online coaching has completely changed my fitness journey. The personalized plans, clear guidance, and constant support keep me motivated and on track. I feel stronger, more flexible, and more confident than ever! Cathy, France, 5 stars: I've tried many fitness programs before, but Wael's approach is different. It's not just about exercise, it's about balance, mobility, well-being, and real progress. I'm so grateful for his support and expertise. Maria, UK, 5 stars: Working with Wael has been an amazing experience. His guidance, professionalism, and genuine care make a huge difference. I've gained strength, improved my mobility, and feel better in my everyday life." loading="lazy"></a><figcaption>⤢ Enlarge</figcaption></figure>
     </div>
   </div>
 </section>
