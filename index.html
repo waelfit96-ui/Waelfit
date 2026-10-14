@@ -240,9 +240,11 @@
   .wa-float svg{width:30px;height:30px}
 
   /* Gallery */
-  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:16px}
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;grid-auto-flow:dense;gap:16px}
   .gallery figure{position:relative;border-radius:var(--radius);overflow:hidden;margin:0;background:var(--dark)}
-  .gallery figure.g-tall{grid-row:span 2;grid-column:span 2}
+  .gallery figure.g-big{grid-row:span 2;grid-column:span 2}
+  .gallery figure.g-tall{grid-row:span 2}
+  .gallery figure.g-wide{grid-column:span 2}
   .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
   .gallery figure:hover img{transform:scale(1.05)}
   .gallery figcaption{position:absolute;left:12px;bottom:12px;background:rgba(11,10,16,.75);backdrop-filter:blur(6px);color:#fff;font-size:.78rem;font-weight:600;padding:6px 12px;border-radius:30px}
@@ -507,11 +509,11 @@
         <div class="program-body"><h3>Yoga & Pilates</h3><p>Build strength, balance and calm. Improve posture, breathing and body awareness.</p><a href="#pricing" class="learn">Book a session <svg><use href="#i-arrow"/></svg></a></div>
       </article>
       <article class="program reveal">
-        <div class="program-media"><div class="wrapper"><img src="images/wael-training.jpg" alt="Coach Wael training with battle ropes" style="object-position:50% 25%"></div><div class="program-icon"><svg><use href="#i-dumbbell"/></svg></div></div>
+        <div class="program-media"><div class="wrapper"><img src="images/wael-coaching.jpg" alt="Coach Wael correcting a client's squat technique" style="object-position:50% 8%"></div><div class="program-icon"><svg><use href="#i-dumbbell"/></svg></div></div>
         <div class="program-body"><h3>Functional, Core & Back</h3><p>Train for everyday life: a strong core, a healthy back and more energy for the things you love.</p><a href="#pricing" class="learn">Book a session <svg><use href="#i-arrow"/></svg></a></div>
       </article>
       <article class="program reveal">
-        <div class="program-media"><div class="wrapper"><img src="images/wael-portrait.jpg" alt="Coach Wael" style="object-position:50% 35%"></div><div class="program-icon"><svg><use href="#i-stretch"/></svg></div></div>
+        <div class="program-media"><div class="wrapper"><img src="images/wael-mobility.webp" alt="Coach Wael doing a hip-flexor mobility stretch" style="object-position:50% 0%"></div><div class="program-icon"><svg><use href="#i-stretch"/></svg></div></div>
         <div class="program-body"><h3>Mobility & Stretching</h3><p>Move freely and without pain. Ease stiffness and keep your joints healthy at any age.</p><a href="#pricing" class="learn">Book a session <svg><use href="#i-arrow"/></svg></a></div>
       </article>
       <article class="program reveal">
@@ -641,9 +643,11 @@
       <p>Follow my daily training tips on <a href="https://www.instagram.com/waelfit.01/" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">Instagram @waelfit.01</a> and my workouts on <a href="https://www.youtube.com/@WaelFit-ks1ie" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">YouTube</a>.</p>
     </div>
     <div class="gallery reveal">
-      <figure class="g-tall"><img src="images/wael-coaching.jpg" alt="Wael correcting a client's squat technique" loading="lazy"><figcaption>Functional training</figcaption></figure>
+      <figure class="g-big"><img src="images/wael-coaching.jpg" alt="Wael correcting a client's squat technique" loading="lazy"><figcaption>Functional training</figcaption></figure>
       <figure><img src="images/wael-yoga.webp" alt="Wael meditating outdoors" loading="lazy" style="object-position:50% 35%"><figcaption>Yoga & mindfulness</figcaption></figure>
+      <figure class="g-tall"><img src="images/wael-award.webp" alt="Wael holding his TUI BLUE Best Employee of the Month and Maker of Happy awards" loading="lazy" style="object-position:50% 40%"><figcaption>Employee of the Month · TUI BLUE</figcaption></figure>
       <figure><img src="images/wael-pregnancy.webp" alt="Wael guiding a pregnant client" loading="lazy" style="object-position:20% 40%"><figcaption>Pregnancy fitness</figcaption></figure>
+      <figure class="g-wide"><img src="images/wael-online.webp" alt="Wael coaching clients in a live online video session" loading="lazy" style="object-position:50% 30%"><figcaption>Live online coaching</figcaption></figure>
       <figure><img src="images/wael-training.jpg" alt="Wael training with battle ropes" loading="lazy" style="object-position:50% 30%"><figcaption>Strength & conditioning</figcaption></figure>
       <figure><img src="images/wael-portrait.jpg" alt="Portrait of Coach Wael" loading="lazy" style="object-position:50% 35%"><figcaption>Coach Wael · TUI BLUE</figcaption></figure>
     </div>
