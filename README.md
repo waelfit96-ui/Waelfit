@@ -39,7 +39,7 @@ You can edit files directly on github.com: open a file, click the pencil icon, m
 | Programs | `<!-- Programs -->`, one `<article class="program">` per card |
 | About text | `<!-- About -->` |
 | Prices | `<!-- Pricing -->`; also update the FAQ, the contact form options and `legal.html` → Terms |
-| Gallery photos | `<!-- Gallery -->`, one `<figure>` per photo (`g-big` = 2×2, `g-tall` = 2 rows, `g-wide` = 2 columns) |
+| Gallery photos | `<!-- Gallery -->`, one `<figure>` per photo (`g-wide` = landscape photo, `g-tall` = portrait photo) |
 | FAQ | `<!-- FAQ -->`, one `<details>` per question |
 | WhatsApp number | Search for `5511985636163` and replace every match |
 | Email | Search for `waelfit01@gmail.com` and replace every match |
