@@ -5,12 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WaelFit | Online Personal Training & Fitness Coaching</title>
 <meta name="description" content="WaelFit – 1:1 online coaching for women aged 27 to 70 with a qualified PE teacher: Yoga & Pilates, Functional Training, Core & Back, Mobility & Stretching, plus full-body and pregnancy workout videos.">
+<!-- SITE ADDRESS: if you use your own domain (e.g. https://waelfit.com/), replace
+     https://waelfit96-ui.github.io/Waelfit/ below, in sitemap.xml and in robots.txt -->
+<link rel="canonical" href="https://waelfit96-ui.github.io/Waelfit/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="WaelFit">
+<meta property="og:url" content="https://waelfit96-ui.github.io/Waelfit/">
 <meta property="og:title" content="WaelFit | 1:1 Online Coaching for Women">
 <meta property="og:description" content="Yoga & Pilates, Functional Training, Core & Back, Mobility & Stretching and pregnancy workouts with Coach Wael. 1:1 sessions from €20, in EN, FR, DE & AR.">
-<meta property="og:image" content="images/wael-coaching.jpg">
+<meta property="og:image" content="https://waelfit96-ui.github.io/Waelfit/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0B0A10">
-<link rel="icon" href="images/logo.webp">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "WaelFit",
+  "description": "1:1 online fitness coaching for women aged 27 to 70: Yoga & Pilates, Functional Training, Core & Back, Mobility & Stretching and pregnancy workouts.",
+  "url": "https://waelfit96-ui.github.io/Waelfit/",
+  "image": "https://waelfit96-ui.github.io/Waelfit/images/og-image.jpg",
+  "logo": "https://waelfit96-ui.github.io/Waelfit/images/apple-touch-icon.png",
+  "email": "waelfit01@gmail.com",
+  "telephone": "+5511985636163",
+  "priceRange": "€12.99–€199",
+  "areaServed": "Europe",
+  "availableLanguage": ["English", "French", "German", "Arabic"],
+  "founder": {"@type": "Person", "name": "Wael Dridi", "jobTitle": "Fitness Instructor & PE Teacher"},
+  "sameAs": [
+    "https://www.instagram.com/waelfit.01/",
+    "https://www.youtube.com/@WaelFit-ks1ie",
+    "https://www.linkedin.com/in/wael-dridi-254641128"
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
@@ -411,7 +442,7 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="#pricing" class="btn btn-primary desk">Book now</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><svg><use href="#i-menu"/></svg></button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><svg><use href="#i-menu"/></svg></button>
   </div>
 </header>
 
@@ -718,8 +749,10 @@
 
   // Mobile menu
   const toggle = document.getElementById('menuToggle'), links = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => links.classList.toggle('open'));
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+  const setMenu = open => { links.classList.toggle('open', open); toggle.setAttribute('aria-expanded', open); };
+  toggle.addEventListener('click', () => setMenu(!links.classList.contains('open')));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 
   // Active nav link on scroll
   const sections = [...document.querySelectorAll('section[id]')];
