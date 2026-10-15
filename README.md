@@ -7,6 +7,7 @@ A plain HTML website with no build step and nothing to install.
 | File | What it is |
 |---|---|
 | `index.html` | The home page (all sections) |
+| `shop.html` | The shop: PDF ebooks and workout programs |
 | `legal.html` | Imprint, Privacy Policy, Terms & Conditions |
 | `404.html` | "Page not found" page |
 | `images/` | Photos, logo, icons and the social-share image (`og-image.jpg`, 1200×630) |
@@ -47,3 +48,30 @@ You can edit files directly on github.com: open a file, click the pencil icon, m
 **Swapping a photo:** upload the new image to `images/`, then change the `src="images/..."` that points to it. Keep photos under ~400 KB so the page loads fast on phones.
 
 **Booking buttons:** any link with `data-wa="..."` opens WhatsApp with that message already typed, so you only need to edit the text inside `data-wa`.
+
+## Selling ebooks and PDF programs (the shop)
+
+The shop page (`shop.html`) shows your products. Payment and PDF delivery are done by **[Payhip](https://payhip.com)**:
+no monthly fee (5% per sale on the free plan, plus the card/PayPal fee), buyers pay by card or PayPal,
+Payhip emails the PDF automatically and calculates EU VAT for you.
+
+Until you add Payhip links, every **Buy now** button opens WhatsApp with a ready-made message, so the shop already works.
+
+### One-time setup (about 20 minutes)
+
+1. Sign up at **payhip.com** (free plan) with `waelfit01@gmail.com`.
+2. **Settings → Payment**: connect **PayPal** and/or **Stripe** (for cards). This is where your money arrives.
+3. **Settings → Taxes**: turn on EU VAT handling and choose to include VAT in your prices.
+4. For each product: **Add product → Digital product**, upload the PDF, a cover image, the title, the description and the price.
+5. Copy the product link Payhip gives you (looks like `https://payhip.com/b/AbC12`).
+6. In `shop.html`, find the product's **Buy now** button and paste the link between the quotes of `data-buy=""`:
+   `data-buy="https://payhip.com/b/AbC12"`. Commit. That button now opens the Payhip checkout.
+
+### Adding, changing or removing a product
+
+In `shop.html`, under `<!-- Products -->`, each product is one `<article class="product">` block. Copy a block to add a product,
+delete one to remove it, and edit the title, text, bullet points and price inside it.
+
+- `data-type="ebook"` or `data-type="program"` sets which filter tab shows it.
+- The six products in the shop now are **examples**: rename them, change prices or delete them to match your real PDFs.
+- Keep the price on the page the same as the price in Payhip.
