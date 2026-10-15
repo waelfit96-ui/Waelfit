@@ -107,6 +107,9 @@
   .book small{font-size:.55rem;font-weight:700;letter-spacing:.2em;color:var(--accent);text-transform:uppercase}
   .book b{font-family:"Barlow Condensed",sans-serif;font-size:clamp(1rem,1.6vw,1.25rem);text-transform:uppercase;line-height:1.05}
   .book i{font-style:normal;font-family:"Barlow Condensed";font-weight:800;font-size:.75rem;letter-spacing:.12em;color:var(--accent-deep)}
+  .cover > img.book-img{position:absolute;inset:auto;top:7%;left:50%;height:86%;width:auto;max-width:none;opacity:1;object-fit:contain;border-radius:4px 8px 8px 4px;box-shadow:0 18px 40px rgba(0,0,0,.5);transform:translateX(-50%) rotate(-3deg);transition:transform .4s}
+  .product:hover .cover > img.book-img{transform:translateX(-50%) rotate(0) scale(1.04)}
+  .cover.has-img{background:linear-gradient(135deg,#1c0b33,#8B4FD8)}
   .tag{position:absolute;top:14px;left:14px;background:rgba(11,10,16,.8);backdrop-filter:blur(6px);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:30px;display:inline-flex;align-items:center;gap:6px;z-index:2}
   .tag svg{width:14px;height:14px;color:var(--accent-2)}
   .product-body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
@@ -280,21 +283,21 @@
         </div>
       </article>
 
-      <article class="product reveal" data-type="program">
-        <div class="cover"><img src="images/wael-pregnancy.webp" alt="" style="object-position:30% 15%"><span class="tag"><svg><use href="#i-dumbbell"/></svg> Program</span>
-          <div class="book"><small>Trimester by trimester</small><b>Fit Pregnancy</b><i>WAELFIT</i></div></div>
+      <article class="product reveal" data-type="ebook">
+        <div class="cover has-img"><span class="tag"><svg><use href="#i-book"/></svg> Ebook</span>
+          <img class="book-img" src="images/ebook-pregnancy-cover.webp" alt="Cover of the ebook The 100 Best Exercises for Pregnant Women by Wael Dridi" width="900" height="1200"></div>
         <div class="product-body">
-          <h3>Fit Pregnancy Program</h3>
-          <p>Safe, gentle workouts to stay strong and active through every trimester.</p>
+          <h3>The 100 Best Exercises for Pregnant Women</h3>
+          <p>Safe, simple movements for every trimester: 100 illustrated exercises you can do at home with little or no equipment.</p>
           <ul>
-            <li><svg><use href="#i-tick"/></svg> Separate plan for each trimester</li>
-            <li><svg><use href="#i-tick"/></svg> Low-impact, joint-friendly exercises</li>
-            <li><svg><use href="#i-tick"/></svg> Breathing and pelvic floor routines</li>
-            <li><svg><use href="#i-tick"/></svg> Safety tips and warning signs</li>
+            <li><svg><use href="#i-tick"/></svg> 100 illustrated exercises in 10 groups</li>
+            <li><svg><use href="#i-tick"/></svg> Trimester guide and sample weekly plans</li>
+            <li><svg><use href="#i-tick"/></svg> Pelvic floor, breathing and labor prep</li>
+            <li><svg><use href="#i-tick"/></svg> Safety rules and a printable tracker</li>
           </ul>
           <div class="buy">
-            <div class="amount">€19.99<small>one-time payment</small></div>
-            <a href="#" data-buy="" data-wa="Hello Wael, I would like to buy the Fit Pregnancy Program (€19.99)." class="btn btn-primary">Buy now <svg><use href="#i-arrow"/></svg></a>
+            <div class="amount">€9.99<small>one-time payment</small></div>
+            <a href="#" data-buy="" data-wa="Hello Wael, I would like to buy the ebook The 100 Best Exercises for Pregnant Women (€9.99)." class="btn btn-primary">Buy now <svg><use href="#i-arrow"/></svg></a>
           </div>
         </div>
       </article>
