@@ -1,4 +1,4 @@
-# Elevo website
+# Kinora website
 
 1:1 online fitness coaching for women aged 27–70 with Coach Wael.
 
@@ -78,7 +78,7 @@ delete one to remove it, and edit the title, text, bullet points and price insid
 
 ## Brand
 
-The brand is **Elevo** (formerly WaelFit). Logo, favicon and share image are in `images/` (`logo.webp`, `favicon.png`, `apple-touch-icon.png`, `og-image.jpg`).
+The brand is **Kinora** (formerly WaelFit). Logo, favicon and share image are in `images/` (`logo.webp`, `favicon.png`, `apple-touch-icon.png`, `og-image.jpg`).
 Colours are unchanged: purple `#8B4FD8` with dark `#0B0A10`.
 
 Still using the old name until you change them: the email `waelfit01@gmail.com`, the Instagram handle `@waelfit.01`, the YouTube channel and the website address `waelfit96-ui.github.io/Waelfit`.
