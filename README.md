@@ -1,4 +1,4 @@
-# WaelFit website
+# Elevo website
 
 1:1 online fitness coaching for women aged 27–70 with Coach Wael.
 
@@ -75,3 +75,11 @@ delete one to remove it, and edit the title, text, bullet points and price insid
 - `data-type="ebook"` or `data-type="program"` sets which filter tab shows it.
 - The six products in the shop now are **examples**: rename them, change prices or delete them to match your real PDFs.
 - Keep the price on the page the same as the price in Payhip.
+
+## Brand
+
+The brand is **Elevo** (formerly WaelFit). Logo, favicon and share image are in `images/` (`logo.webp`, `favicon.png`, `apple-touch-icon.png`, `og-image.jpg`).
+Colours are unchanged: purple `#8B4FD8` with dark `#0B0A10`.
+
+Still using the old name until you change them: the email `waelfit01@gmail.com`, the Instagram handle `@waelfit.01`, the YouTube channel and the website address `waelfit96-ui.github.io/Waelfit`.
+When you get your own domain and new handles, search for those and replace them.
