@@ -13,20 +13,33 @@ A plain HTML website with no build step and nothing to install.
 | `images/` | Photos, logo, icons and the social-share image (`og-image.jpg`, 1200×630) |
 | `robots.txt`, `sitemap.xml` | Help Google find the site |
 
-## Before you publish: checklist
+## Your website address
 
-- [x] **Imprint address**: filled in `legal.html`.
-- [ ] **Your own domain (optional)**: if you buy one (e.g. `waelfit.com`), replace `https://waelfit96-ui.github.io/Waelfit/` in `index.html`, `robots.txt` and `sitemap.xml`, and replace `/Waelfit/` in `404.html` with `/`.
+The site is published at **https://kinorafit.online** (domain bought at Namecheap).
+The file `CNAME` tells GitHub Pages which domain to use. Do not delete it.
 
-## Publish for free with GitHub Pages
+### Publish with GitHub Pages (free)
 
 1. Merge this branch into `main`.
-2. On GitHub, open the repository and go to **Settings → Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**, branch **`main`**, folder **`/ (root)`**, then click **Save**.
-4. After 1–2 minutes the site is live at **https://waelfit96-ui.github.io/Waelfit/**.
-5. Optional: under **Custom domain**, enter your own domain and follow GitHub's DNS instructions.
+2. On GitHub: **Settings → Pages → Build and deployment → Deploy from a branch**, branch **`main`**, folder **`/ (root)`**, **Save**.
+3. Every change you push to `main` updates the live site automatically.
 
-Every change you push to `main` updates the live site automatically.
+### One-time setup: connect the domain
+
+1. **Namecheap → Domain List → Manage → Advanced DNS.** Delete the default parking records (a `CNAME www` pointing to parking-page, and any `URL Redirect` record), then add these:
+
+   | Type | Host | Value |
+   |---|---|---|
+   | A Record | `@` | `185.199.108.153` |
+   | A Record | `@` | `185.199.109.153` |
+   | A Record | `@` | `185.199.110.153` |
+   | A Record | `@` | `185.199.111.153` |
+   | CNAME Record | `www` | `waelfit96-ui.github.io.` |
+
+   Leave the nameservers on **Namecheap BasicDNS** (the default).
+2. **GitHub → Settings → Pages → Custom domain**: enter `kinorafit.online` and **Save**. Wait for the DNS check to pass (a few minutes to a few hours).
+3. Tick **Enforce HTTPS** once it becomes available (it can take up to an hour after the DNS check).
+4. The old address `waelfit96-ui.github.io/Waelfit` then redirects to the new one automatically.
 
 ## How to edit the site
 
