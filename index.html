@@ -26,7 +26,7 @@
   "@context": "https://schema.org",
   "@type": "HealthAndBeautyBusiness",
   "name": "Kinora",
-  "alternateName": "WaelFit",
+  "alternateName": "Kinora.fit",
   "description": "1:1 online fitness coaching for women aged 27 to 70: Yoga & Pilates, Functional Training, Core & Back, Mobility & Stretching and pregnancy workouts.",
   "url": "https://kinorafit.online/",
   "image": "https://kinorafit.online/images/og-image.jpg",
@@ -796,7 +796,7 @@
     e.preventDefault();
     const f = e.target, d = new FormData(f);
     const body = `Name: ${d.get('name')}\nEmail: ${d.get('email')}\nCountry: ${d.get('country')}\nGoal: ${d.get('goal')}\n\n${d.get('message')}`;
-    window.location.href = 'mailto:waelfit01@gmail.com?subject=' + encodeURIComponent('WaelFit request – ' + d.get('goal') + ' – ' + d.get('name')) + '&body=' + encodeURIComponent(body);
+    window.location.href = 'mailto:waelfit01@gmail.com?subject=' + encodeURIComponent('Kinora request – ' + d.get('goal') + ' – ' + d.get('name')) + '&body=' + encodeURIComponent(body);
     document.getElementById('formOk').style.display = 'block';
   });
 </script>
