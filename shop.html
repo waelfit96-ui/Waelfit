@@ -68,6 +68,7 @@
   .brand-badge{width:46px;height:46px;border-radius:12px;overflow:hidden;flex-shrink:0;background:#000;box-shadow:0 0 0 1px rgba(180,138,240,.25),0 6px 18px rgba(139,79,216,.45)}
   .brand-badge img{width:100%;height:100%;object-fit:cover}
   .brand-name{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:1.65rem;letter-spacing:.06em;line-height:1}
+  .brand-word{height:44px;width:auto;display:block}
   .brand-name i{font-style:normal;color:var(--accent-2)}
   .brand-name span{display:block;font-family:Inter;font-size:.6rem;font-weight:600;letter-spacing:.32em;color:var(--accent-2);margin-top:3px}
   .nav-links{display:flex;gap:32px;list-style:none}
@@ -189,6 +190,7 @@
     .section{padding:64px 0}
     .products{grid-template-columns:1fr}
     .brand-name{font-size:1.4rem}
+    .brand-word{height:34px}
     .shop-hero .container{padding:60px 0 54px}
   }
 </style>
@@ -217,7 +219,7 @@
   <div class="container">
     <a href="index.html" class="brand" aria-label="Kinora home">
       <div class="brand-badge"><img src="images/logo.webp" alt="Kinora logo"></div>
-      <div class="brand-name">KINORA<i>.FIT</i><span>ONLINE COACHING</span></div>
+      <img class="brand-word" src="images/logo-wordmark.webp" alt="KinoraFit: Train, Improve, Beyond" width="600" height="128">
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
@@ -281,8 +283,8 @@
 
 
       <article class="product reveal" data-type="ebook">
-        <div class="cover c2"><span class="tag"><svg><use href="#i-book"/></svg> Ebook</span>
-          <div class="book"><small>Ebook</small><b>Strong Core, Healthy Back</b><i>KINORA</i></div></div>
+        <div class="cover has-img"><span class="tag"><svg><use href="#i-book"/></svg> Ebook</span>
+          <img class="book-img" src="images/ebook-back-cover.webp" alt="Cover of the ebook Strong Core, Healthy Back by Wael Dridi" width="840" height="1190"></div>
         <div class="product-body">
           <h3>Strong Core, Healthy Back</h3>
           <p>Understand back pain and fix it with simple exercises and better daily habits.</p>
@@ -299,8 +301,8 @@
       </article>
 
       <article class="product reveal" data-type="ebook">
-        <div class="cover"><span class="tag"><svg><use href="#i-book"/></svg> Ebook</span>
-          <div class="book"><small>Ebook</small><b>Healthy Eating for Busy Women</b><i>KINORA</i></div></div>
+        <div class="cover has-img"><span class="tag"><svg><use href="#i-book"/></svg> Ebook</span>
+          <img class="book-img" src="images/ebook-eating-cover.webp" alt="Cover of the ebook Healthy Eating for Busy Women by Wael Dridi" width="840" height="1190"></div>
         <div class="product-body">
           <h3>Healthy Eating for Busy Women</h3>
           <p>Simple nutrition basics and quick meals to support your training and your energy.</p>
@@ -317,8 +319,8 @@
       </article>
 
       <article class="product reveal" data-type="ebook">
-        <div class="cover c3"><span class="tag"><svg><use href="#i-book"/></svg> Ebook</span>
-          <div class="book"><small>Ebook</small><b>Yoga & Pilates for Beginners</b><i>KINORA</i></div></div>
+        <div class="cover has-img"><span class="tag"><svg><use href="#i-book"/></svg> Ebook</span>
+          <img class="book-img" src="images/ebook-yoga-cover.webp" alt="Cover of the ebook Yoga &amp; Pilates for Beginners by Wael Dridi" width="840" height="1190"></div>
         <div class="product-body">
           <h3>Yoga & Pilates for Beginners</h3>
           <p>Learn the key poses and movements step by step, and build a calm daily practice.</p>
