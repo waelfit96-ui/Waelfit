@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop | Kinora Ebooks & Workout Programs</title>
-<meta name="description" content="Download Kinora PDF ebooks and workout programs for women aged 27 to 70. Pay once by card or PayPal and get your PDF instantly by email.">
+<title>Shop | Kinora Ebooks</title>
+<meta name="description" content="Download Kinora PDF ebooks for women aged 27 to 70. Pay once by card or PayPal and get your PDF instantly by email.">
 <link rel="canonical" href="https://kinorafit.online/shop.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kinora">
 <meta property="og:url" content="https://kinorafit.online/shop.html">
-<meta property="og:title" content="Kinora Shop | Ebooks & Workout Programs">
-<meta property="og:description" content="PDF ebooks and workout programs by Coach Wael. Pay once, download instantly.">
+<meta property="og:title" content="Kinora Shop | Ebooks">
+<meta property="og:description" content="Illustrated PDF ebooks by Coach Wael. Pay once, download instantly.">
 <meta property="og:image" content="https://kinorafit.online/images/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0B0A10">
@@ -96,7 +96,7 @@
   .filter[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
 
   /* Products */
-  .products{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .products{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;max-width:900px;margin-inline:auto}
   .product{background:#fff;border:1px solid #ebe8f2;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:.3s}
   .product:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(74,29,122,.15);border-color:transparent}
   .product[hidden]{display:none}
@@ -235,7 +235,7 @@
   <div class="container">
     <span class="eyebrow">Kinora Shop</span>
     <h1 class="h-serif">Train with me, <em>anytime.</em></h1>
-    <p>PDF ebooks and step-by-step workout programs I've created for women aged 27 to 70. Pay once, download instantly and keep them forever.</p>
+    <p>Illustrated PDF ebooks I've created for women aged 27 to 70: training, yoga, nutrition and pregnancy. Pay once, download instantly and keep them forever.</p>
     <div class="perks">
       <span><svg><use href="#i-download"/></svg> Instant PDF download</span>
       <span><svg><use href="#i-card"/></svg> Card or PayPal</span>
@@ -246,44 +246,19 @@
 
 <!-- Products
      HOW TO EDIT: one <article class="product"> per product.
-     - data-type="ebook" or data-type="program" decides which filter tab shows it.
      - data-buy="": paste the product's Payhip link here (e.g. https://payhip.com/b/AbC12).
        While it's empty, the Buy button opens WhatsApp with a ready-made message instead.
-     - Covers: ebooks use the drawn book; programs use a photo from images/. -->
+     - Covers: ebooks use the drawn book or an image from images/. -->
 <section class="section" id="products">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Digital Products</span>
-      <h2 class="h-serif">Ebooks & Programs</h2>
+      <h2 class="h-serif">Ebooks</h2>
       <p>Everything comes as a PDF you can read on your phone, tablet or computer, or print out.</p>
-    </div>
-
-    <div class="filters" role="group" aria-label="Filter products">
-      <button class="filter" data-filter="all" aria-pressed="true">All</button>
-      <button class="filter" data-filter="ebook" aria-pressed="false">Ebooks</button>
-      <button class="filter" data-filter="program" aria-pressed="false">Workout programs</button>
     </div>
 
     <div class="products">
 
-      <article class="product reveal" data-type="program">
-        <div class="cover"><img src="images/wael-coaching.jpg" alt="" style="object-position:50% 8%"><span class="tag"><svg><use href="#i-dumbbell"/></svg> Program</span>
-          <div class="book"><small>8-week program</small><b>Full Body at Home</b><i>KINORA</i></div></div>
-        <div class="product-body">
-          <h3>8-Week Full Body at Home</h3>
-          <p>A complete plan to build strength and energy at home, with little or no equipment.</p>
-          <ul>
-            <li><svg><use href="#i-tick"/></svg> 3 workouts a week, 30–40 minutes</li>
-            <li><svg><use href="#i-tick"/></svg> Beginner and intermediate levels</li>
-            <li><svg><use href="#i-tick"/></svg> Photos and clear instructions for every exercise</li>
-            <li><svg><use href="#i-tick"/></svg> Weekly progress tracker</li>
-          </ul>
-          <div class="buy">
-            <div class="amount">€24.99<small>one-time payment</small></div>
-            <a href="#" data-buy="" data-wa="Hello Wael, I would like to buy the 8-Week Full Body at Home program (€24.99)." class="btn btn-primary">Buy now <svg><use href="#i-arrow"/></svg></a>
-          </div>
-        </div>
-      </article>
 
       <article class="product reveal" data-type="ebook">
         <div class="cover has-img"><span class="tag"><svg><use href="#i-book"/></svg> Ebook</span>
@@ -304,23 +279,6 @@
         </div>
       </article>
 
-      <article class="product reveal" data-type="program">
-        <div class="cover"><img src="images/wael-mobility.webp" alt="" style="object-position:50% 0%"><span class="tag"><svg><use href="#i-dumbbell"/></svg> Program</span>
-          <div class="book"><small>30-day plan</small><b>Mobility & Stretching</b><i>KINORA</i></div></div>
-        <div class="product-body">
-          <h3>30-Day Mobility & Stretching</h3>
-          <p>15 minutes a day to ease stiffness, move without pain and protect your joints.</p>
-          <ul>
-            <li><svg><use href="#i-tick"/></svg> A short routine for every day</li>
-            <li><svg><use href="#i-tick"/></svg> Hips, back, shoulders and neck</li>
-            <li><svg><use href="#i-tick"/></svg> Suitable for all ages and levels</li>
-          </ul>
-          <div class="buy">
-            <div class="amount">€14.99<small>one-time payment</small></div>
-            <a href="#" data-buy="" data-wa="Hello Wael, I would like to buy the 30-Day Mobility & Stretching program (€14.99)." class="btn btn-primary">Buy now <svg><use href="#i-arrow"/></svg></a>
-          </div>
-        </div>
-      </article>
 
       <article class="product reveal" data-type="ebook">
         <div class="cover c2"><span class="tag"><svg><use href="#i-book"/></svg> Ebook</span>
@@ -388,7 +346,7 @@
       <h2 class="h-serif">How It Works</h2>
     </div>
     <div class="steps">
-      <div class="step reveal"><span class="icon-box"><svg><use href="#i-book"/></svg></span><h3>Choose your PDF</h3><p>Pick an ebook or workout program and click "Buy now".</p></div>
+      <div class="step reveal"><span class="icon-box"><svg><use href="#i-book"/></svg></span><h3>Choose your PDF</h3><p>Pick an ebook and click "Buy now".</p></div>
       <div class="step reveal"><span class="icon-box"><svg><use href="#i-lock"/></svg></span><h3>Pay securely</h3><p>Pay once with your card or PayPal. No subscription, no account needed.</p></div>
       <div class="step reveal"><span class="icon-box"><svg><use href="#i-mail"/></svg></span><h3>Download instantly</h3><p>Your download link appears right away and is also sent to your email.</p></div>
     </div>
@@ -411,9 +369,9 @@
       <details><summary>How do I receive my PDF?</summary><p>Right after payment you get a download link on screen and by email. If you can't find the email, check your spam folder or write to me.</p></details>
       <details><summary>Can I read it on my phone?</summary><p>Yes. The PDFs work on any phone, tablet or computer, and you can print them.</p></details>
       <details><summary>Is it a subscription?</summary><p>No. You pay once and the PDF is yours to keep. For live coaching, see <a href="index.html#pricing">1:1 sessions at €20</a>.</p></details>
-      <details><summary>I'm a complete beginner. Is this for me?</summary><p>Yes. Every program explains each exercise and gives easier options. If you're unsure which one to pick, message me on WhatsApp.</p></details>
+      <details><summary>I'm a complete beginner. Is this for me?</summary><p>Yes. Every ebook explains each exercise step by step, with photos and easier options. If you're unsure which one to pick, message me on WhatsApp.</p></details>
       <details><summary>Can I get a refund?</summary><p>Because the PDF is delivered instantly, the right of withdrawal ends once the download starts (you agree to this at checkout). If there's a problem with your file, contact me and I'll fix it. See the <a href="legal.html#terms">Terms</a>.</p></details>
-      <details><summary>Is it safe if I have an injury or I'm pregnant?</summary><p>Please check with your doctor before starting any program. The programs are fitness guidance, not medical advice.</p></details>
+      <details><summary>Is it safe if I have an injury or I'm pregnant?</summary><p>Please check with your doctor before you start. The ebooks are fitness guidance, not medical advice.</p></details>
     </div>
   </div>
 </section>
@@ -433,7 +391,7 @@
   </div>
 </footer>
 
-<a href="#" data-wa="Hello Wael, I have a question about your ebooks and programs." class="wa-float" aria-label="Chat on WhatsApp"><svg><use href="#i-wa"/></svg></a>
+<a href="#" data-wa="Hello Wael, I have a question about your ebooks." class="wa-float" aria-label="Chat on WhatsApp"><svg><use href="#i-wa"/></svg></a>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
