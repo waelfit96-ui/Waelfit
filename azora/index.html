@@ -58,6 +58,10 @@
   .btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
   .btn-ghost:hover{border-color:#fff}
   .btn-azure{background:var(--azure);color:#fff}
+  .btn-shein{background:#111;color:#fff}
+  .btn-shein:hover{background:#000;transform:translateY(-2px)}
+  .thumb.shein{background:linear-gradient(135deg,#111,#3a3a3a)}
+  .chip.sh{background:#fff;color:#111}
   .btn-azure:hover{background:#0868c0;transform:translateY(-2px)}
 
   /* Nav */
@@ -87,12 +91,6 @@
   /* Disclosure */
   .disclosure{max-width:860px;margin:0 auto 34px;background:var(--sand);border-left:4px solid var(--coral);border-radius:12px;padding:14px 18px;font-size:.86rem;color:var(--muted)}
   .disclosure b{color:var(--text)}
-
-  /* Region switch */
-  .region{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px;font-size:.86rem;color:var(--muted)}
-  .region-btns{display:inline-flex;background:var(--sand);border-radius:999px;padding:4px}
-  .region-btns button{border:0;background:none;font:inherit;font-weight:700;font-size:.84rem;padding:8px 16px;border-radius:999px;cursor:pointer;color:var(--muted)}
-  .region-btns button[aria-pressed="true"]{background:#fff;color:var(--text);box-shadow:0 2px 8px rgba(11,30,45,.12)}
 
   /* Filters */
   .filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:34px}
@@ -235,11 +233,12 @@
 
 <!-- Products
      HOW TO EDIT: one <article class="card"> per product.
-     - data-cat decides which filter tab shows it: gym, kitchen, nutrition, care, clothes, recovery, aquafit.
+     - data-cat decides which filter tab shows it: gym, kitchen, nutrition, care, shein, clothes, recovery, aquafit.
      - The button goes to an Amazon search for data-q. To link one exact product,
        paste your Amazon affiliate link (from SiteStripe) into href and delete data-q.
      - Put class="hot" chip on trending items, or remove it.
-     - The Amazon stores and tracking IDs for Europe and Brazil are set at the bottom of this file (STORES).
+     - Amazon Brasil tracking ID is set at the bottom of this file (AMAZON).
+     - SHEIN cards: paste your SHEIN affiliate link into data-shein=""; empty = plain SHEIN search.
      Do not write prices: Amazon does not allow fixed prices on your own page. -->
 <section class="section" id="picks">
   <div class="container">
@@ -249,14 +248,7 @@
       <p>Train, cook, recover and feel good. Start with two or three things and build from there.</p>
     </div>
 
-    <div class="disclosure reveal"><b>Affiliate disclosure:</b> Azora Fit earns from qualifying purchases as an Amazon Associate. If you buy through our links we may earn a small commission, at no extra cost to you.</div>
-
-    <div class="region reveal"><span>Shop from:</span>
-      <div class="region-btns" role="group" aria-label="Choose your Amazon store">
-        <button data-region="eu" aria-pressed="true">🇪🇺 Europe (amazon.de)</button>
-        <button data-region="br" aria-pressed="false">🇧🇷 Brasil (amazon.com.br)</button>
-      </div>
-    </div>
+    <div class="disclosure reveal"><b>Affiliate disclosure:</b> Azora Fit earns from qualifying purchases as an Amazon Associate and through the SHEIN affiliate program. If you buy through our links we may earn a small commission, at no extra cost to you.</div>
 
     <div class="filters" role="group" aria-label="Filter products">
       <button class="filter" data-filter="all" aria-pressed="true">All</button>
@@ -264,6 +256,7 @@
       <button class="filter" data-filter="kitchen" aria-pressed="false">Healthy kitchen</button>
       <button class="filter" data-filter="nutrition" aria-pressed="false">Protein &amp; nutrition</button>
       <button class="filter" data-filter="care" aria-pressed="false">Body care</button>
+      <button class="filter" data-filter="shein" aria-pressed="false">SHEIN activewear</button>
       <button class="filter" data-filter="clothes" aria-pressed="false">Fitness clothes</button>
       <button class="filter" data-filter="recovery" aria-pressed="false">Recovery</button>
       <button class="filter" data-filter="aquafit" aria-pressed="false">Aquafit</button>
@@ -278,7 +271,7 @@
           <p>The easiest way to tone legs, glutes and arms at home. Light, cheap and fits in a drawer.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> A set of 4–5 resistance levels</li><li><svg><use href="#i-tick"/></svg> Fabric bands if latex rolls up</li><li><svg><use href="#i-tick"/></svg> A small carry bag</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=resistance+loop+bands+set" data-q="resistance loop bands set" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=resistance+loop+bands+set&amp;tag=azorafit-20" data-q="resistance loop bands set" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -289,7 +282,7 @@
           <p>Protects knees, wrists and back for Pilates, yoga, core and stretching.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> 8–10 mm thick for comfort</li><li><svg><use href="#i-tick"/></svg> Non-slip on both sides</li><li><svg><use href="#i-tick"/></svg> A carry strap</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=extra+thick+exercise+mat" data-q="extra thick exercise mat" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=extra+thick+exercise+mat&amp;tag=azorafit-20" data-q="extra thick exercise mat" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -300,7 +293,7 @@
           <p>For posture, arms and functional training. Light weight, many reps, real results.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> Neoprene or vinyl coating</li><li><svg><use href="#i-tick"/></svg> A non-slip grip</li><li><svg><use href="#i-tick"/></svg> A pair, or a set with a stand</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=neoprene+dumbbells+set" data-q="neoprene dumbbells set" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=neoprene+dumbbells+set&amp;tag=azorafit-20" data-q="neoprene dumbbells set" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -311,7 +304,7 @@
           <p>Turns walks and simple moves into strength training, without extra gym time.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> Start light: 2–5 kg</li><li><svg><use href="#i-tick"/></svg> Adjustable straps that don't bounce</li><li><svg><use href="#i-tick"/></svg> Removable weights</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=weighted+vest+adjustable" data-q="weighted vest adjustable" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=weighted+vest+adjustable&amp;tag=azorafit-20" data-q="weighted vest adjustable" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -322,7 +315,7 @@
           <p>A popular home trainer for circulation, balance and gentle activation. Check with your doctor first if you are pregnant or have a medical condition.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> Several speed levels</li><li><svg><use href="#i-tick"/></svg> A non-slip surface</li><li><svg><use href="#i-tick"/></svg> A clear maximum user weight</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=vibration+plate" data-q="vibration plate" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=vibration+plate&amp;tag=azorafit-20" data-q="vibration plate" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -333,7 +326,7 @@
           <p>For core work, posture at your desk and pregnancy and birth preparation.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> 65 cm suits most people up to 1.75 m</li><li><svg><use href="#i-tick"/></svg> Labelled "anti-burst"</li><li><svg><use href="#i-tick"/></svg> Comes with a pump</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=exercise+ball+anti+burst+65cm" data-q="exercise ball anti burst 65cm" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=exercise+ball+anti+burst+65cm&amp;tag=azorafit-20" data-q="exercise ball anti burst 65cm" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -344,7 +337,7 @@
           <p>Crispy food with little or no oil. Great for vegetables, chicken and quick healthy dinners.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> 4–6 litres for 2–4 people</li><li><svg><use href="#i-tick"/></svg> Easy-clean, dishwasher-safe basket</li><li><svg><use href="#i-tick"/></svg> Simple presets and a timer</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=air+fryer" data-q="air fryer" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=air+fryer&amp;tag=azorafit-20" data-q="air fryer" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -355,7 +348,7 @@
           <p>Protein shakes, green smoothies and soups in a minute.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> A strong motor for frozen fruit</li><li><svg><use href="#i-tick"/></svg> A to-go bottle option</li><li><svg><use href="#i-tick"/></svg> Easy to take apart and wash</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=smoothie+blender+to+go" data-q="smoothie blender to go" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=smoothie+blender+to+go&amp;tag=azorafit-20" data-q="smoothie blender to go" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -366,7 +359,7 @@
           <p>The simplest tool to learn portion sizes and cook to a plan.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> Accurate to 1 g</li><li><svg><use href="#i-tick"/></svg> Tare (zero) button</li><li><svg><use href="#i-tick"/></svg> Flat surface that is easy to wipe</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=digital+kitchen+scale" data-q="digital kitchen scale" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=digital+kitchen+scale&amp;tag=azorafit-20" data-q="digital kitchen scale" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -377,7 +370,7 @@
           <p>Cook once, eat well all week. Safe in the microwave, oven and freezer.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> Glass, not thin plastic</li><li><svg><use href="#i-tick"/></svg> Leak-proof clip lids</li><li><svg><use href="#i-tick"/></svg> Several sizes in one set</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=glass+meal+prep+containers" data-q="glass meal prep containers" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=glass+meal+prep+containers&amp;tag=azorafit-20" data-q="glass meal prep containers" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -388,7 +381,7 @@
           <p>A clean protein for shakes, porridge and baking, from peas, rice or soy.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> Certified organic (bio) label</li><li><svg><use href="#i-tick"/></svg> Short ingredient list, low sugar</li><li><svg><use href="#i-tick"/></svg> A flavour you will actually drink</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=organic+plant+protein+powder" data-q="organic plant protein powder" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=organic+plant+protein+powder&amp;tag=azorafit-20" data-q="organic plant protein powder" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -399,7 +392,7 @@
           <p>A convenient way to reach your daily protein after training.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> Third-party tested</li><li><svg><use href="#i-tick"/></svg> At least 20 g protein per scoop</li><li><svg><use href="#i-tick"/></svg> Little added sugar</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=whey+protein+powder" data-q="whey protein powder" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=whey+protein+powder&amp;tag=azorafit-20" data-q="whey protein powder" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -410,7 +403,7 @@
           <p>Mix your shake anywhere without lumps.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> Leak-proof lid</li><li><svg><use href="#i-tick"/></svg> Mixing ball or grid</li><li><svg><use href="#i-tick"/></svg> Dishwasher-safe and BPA-free</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=protein+shaker+bottle" data-q="protein shaker bottle" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=protein+shaker+bottle&amp;tag=azorafit-20" data-q="protein shaker bottle" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -421,7 +414,7 @@
           <p>A cooling or warming gel to massage tired muscles after training.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> Gentle on skin, dermatologically tested</li><li><svg><use href="#i-tick"/></svg> Fast-absorbing, not sticky</li><li><svg><use href="#i-tick"/></svg> Check ingredients if you have allergies</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=muscle+massage+gel" data-q="muscle massage gel" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=muscle+massage+gel&amp;tag=azorafit-20" data-q="muscle massage gel" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -432,7 +425,7 @@
           <p>For outdoor training and beach workouts: protection that stays on when you sweat.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> SPF 30–50</li><li><svg><use href="#i-tick"/></svg> Water- and sweat-resistant</li><li><svg><use href="#i-tick"/></svg> Light, non-greasy texture</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=sport+sunscreen+spf+50+water+resistant" data-q="sport sunscreen spf 50 water resistant" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=sport+sunscreen+spf+50+water+resistant&amp;tag=azorafit-20" data-q="sport sunscreen spf 50 water resistant" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -443,7 +436,73 @@
           <p>Keeps skin soft after showers, swimming and sun.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> Fragrance-free if your skin is sensitive</li><li><svg><use href="#i-tick"/></svg> Fast-absorbing</li><li><svg><use href="#i-tick"/></svg> A pump bottle for daily use</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=body+lotion+moisturizing" data-q="body lotion moisturizing" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=body+lotion+moisturizing&amp;tag=azorafit-20" data-q="body lotion moisturizing" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </article>
+
+      <article class="card reveal" data-cat="shein">
+        <div class="thumb shein"><span class="chip sh">SHEIN</span><span class="hot">Trending</span><svg class="ic"><use href="#i-legging"/></svg></div>
+        <div class="card-body">
+          <h3>Seamless workout set</h3>
+          <p>Matching leggings and top: the easiest way to look good and feel confident when you train.</p>
+          <div class="look">What to look for</div>
+          <ul><li><svg><use href="#i-tick"/></svg> Seamless, squat-proof fabric</li><li><svg><use href="#i-tick"/></svg> Check the size chart and reviews with photos</li><li><svg><use href="#i-tick"/></svg> Choose a set you can mix and match</li></ul>
+          <div class="buy"><small><b>Check price</b>on SHEIN</small><a href="https://br.shein.com/pdsearch/seamless%20workout%20set%20women/" data-sq="seamless workout set women" data-shein="" target="_blank" rel="sponsored nofollow noopener" class="btn btn-shein">View on SHEIN <svg><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </article>
+
+      <article class="card reveal" data-cat="shein">
+        <div class="thumb shein"><span class="chip sh">SHEIN</span><svg class="ic"><use href="#i-legging"/></svg></div>
+        <div class="card-body">
+          <h3>High-waist sports leggings</h3>
+          <p>Comfortable leggings for training, walking and everyday life.</p>
+          <div class="look">What to look for</div>
+          <ul><li><svg><use href="#i-tick"/></svg> High waist that stays in place</li><li><svg><use href="#i-tick"/></svg> Not see-through when you squat</li><li><svg><use href="#i-tick"/></svg> Pockets for your phone</li></ul>
+          <div class="buy"><small><b>Check price</b>on SHEIN</small><a href="https://br.shein.com/pdsearch/high%20waist%20sports%20leggings/" data-sq="high waist sports leggings" data-shein="" target="_blank" rel="sponsored nofollow noopener" class="btn btn-shein">View on SHEIN <svg><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </article>
+
+      <article class="card reveal" data-cat="shein">
+        <div class="thumb shein"><span class="chip sh">SHEIN</span><svg class="ic"><use href="#i-bra"/></svg></div>
+        <div class="card-body">
+          <h3>Sports bra</h3>
+          <p>Support and comfort for training, Pilates and aquafit warm-ups.</p>
+          <div class="look">What to look for</div>
+          <ul><li><svg><use href="#i-tick"/></svg> Medium or high support for jumping</li><li><svg><use href="#i-tick"/></svg> Removable pads</li><li><svg><use href="#i-tick"/></svg> Wide straps</li></ul>
+          <div class="buy"><small><b>Check price</b>on SHEIN</small><a href="https://br.shein.com/pdsearch/sports%20bra/" data-sq="sports bra" data-shein="" target="_blank" rel="sponsored nofollow noopener" class="btn btn-shein">View on SHEIN <svg><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </article>
+
+      <article class="card reveal" data-cat="shein">
+        <div class="thumb shein"><span class="chip sh">SHEIN</span><svg class="ic"><use href="#i-shirt"/></svg></div>
+        <div class="card-body">
+          <h3>Training tops &amp; tanks</h3>
+          <p>Light, breathable tops for the gym, home workouts and running.</p>
+          <div class="look">What to look for</div>
+          <ul><li><svg><use href="#i-tick"/></svg> Quick-dry fabric</li><li><svg><use href="#i-tick"/></svg> A cut you can move in</li><li><svg><use href="#i-tick"/></svg> Easy to wash</li></ul>
+          <div class="buy"><small><b>Check price</b>on SHEIN</small><a href="https://br.shein.com/pdsearch/workout%20tank%20top%20women/" data-sq="workout tank top women" data-shein="" target="_blank" rel="sponsored nofollow noopener" class="btn btn-shein">View on SHEIN <svg><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </article>
+
+      <article class="card reveal" data-cat="shein">
+        <div class="thumb shein"><span class="chip sh">SHEIN</span><svg class="ic"><use href="#i-legging"/></svg></div>
+        <div class="card-body">
+          <h3>Gym shorts</h3>
+          <p>For hot days, running and functional training.</p>
+          <div class="look">What to look for</div>
+          <ul><li><svg><use href="#i-tick"/></svg> Built-in liner or biker style</li><li><svg><use href="#i-tick"/></svg> Wide, comfortable waistband</li><li><svg><use href="#i-tick"/></svg> Breathable fabric</li></ul>
+          <div class="buy"><small><b>Check price</b>on SHEIN</small><a href="https://br.shein.com/pdsearch/gym%20shorts%20women/" data-sq="gym shorts women" data-shein="" target="_blank" rel="sponsored nofollow noopener" class="btn btn-shein">View on SHEIN <svg><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </article>
+
+      <article class="card reveal" data-cat="shein">
+        <div class="thumb shein"><span class="chip sh">SHEIN</span><svg class="ic"><use href="#i-wave"/></svg></div>
+        <div class="card-body">
+          <h3>Sporty swimwear for aquafit</h3>
+          <p>Swimwear that stays in place when you move in the water.</p>
+          <div class="look">What to look for</div>
+          <ul><li><svg><use href="#i-tick"/></svg> Good support and full coverage</li><li><svg><use href="#i-tick"/></svg> Chlorine-resistant fabric</li><li><svg><use href="#i-tick"/></svg> Easy to put on and take off</li></ul>
+          <div class="buy"><small><b>Check price</b>on SHEIN</small><a href="https://br.shein.com/pdsearch/sporty%20one%20piece%20swimsuit/" data-sq="sporty one piece swimsuit" data-shein="" target="_blank" rel="sponsored nofollow noopener" class="btn btn-shein">View on SHEIN <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -454,7 +513,7 @@
           <p>Comfortable for training, walking and everyday life, and they stay in place.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> Squat-proof, not see-through</li><li><svg><use href="#i-tick"/></svg> A wide waistband</li><li><svg><use href="#i-tick"/></svg> Side pockets for your phone</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=high+waist+leggings+women+pockets" data-q="high waist leggings women pockets" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=high+waist+leggings+women+pockets&amp;tag=azorafit-20" data-q="high waist leggings women pockets" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -465,7 +524,7 @@
           <p>The one piece of activewear that really matters for comfort when you move.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> Medium or high support</li><li><svg><use href="#i-tick"/></svg> Wide, adjustable straps</li><li><svg><use href="#i-tick"/></svg> Breathable fabric</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=sports+bra+medium+support" data-q="sports bra medium support" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=sports+bra+medium+support&amp;tag=azorafit-20" data-q="sports bra medium support" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -476,7 +535,7 @@
           <p>Light and breathable for gym, home workouts and running, for men and women.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> Moisture-wicking fabric</li><li><svg><use href="#i-tick"/></svg> Flat seams that don't rub</li><li><svg><use href="#i-tick"/></svg> Easy to wash, keeps its shape</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=quick+dry+training+t-shirt" data-q="quick dry training t-shirt" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=quick+dry+training+t-shirt&amp;tag=azorafit-20" data-q="quick dry training t-shirt" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -487,7 +546,7 @@
           <p>Stable shoes for functional training, classes and walking.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> A flat, stable sole</li><li><svg><use href="#i-tick"/></svg> Good grip</li><li><svg><use href="#i-tick"/></svg> Light and breathable</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=cross+training+shoes" data-q="cross training shoes" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=cross+training+shoes&amp;tag=azorafit-20" data-q="cross training shoes" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -498,7 +557,7 @@
           <p>The easiest healthy habit: keep it on your desk and drink more without thinking.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> 1–2 litres</li><li><svg><use href="#i-tick"/></svg> Leak-proof lid and straw</li><li><svg><use href="#i-tick"/></svg> BPA-free, dishwasher-safe</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=water+tumbler+straw+leakproof" data-q="water tumbler straw leakproof" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=water+tumbler+straw+leakproof&amp;tag=azorafit-20" data-q="water tumbler straw leakproof" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -509,7 +568,7 @@
           <p>Eases tight muscles in your back, hips and legs after training or a long day.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> Medium firmness to start</li><li><svg><use href="#i-tick"/></svg> 30–45 cm long</li><li><svg><use href="#i-tick"/></svg> Lightly textured surface</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=foam+roller+medium" data-q="foam roller medium" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=foam+roller+medium&amp;tag=azorafit-20" data-q="foam roller medium" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -520,7 +579,7 @@
           <p>Small and cheap: works on feet, shoulders and glutes where a roller can't reach.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> Two firmness levels</li><li><svg><use href="#i-tick"/></svg> A peanut-shaped ball for the spine</li><li><svg><use href="#i-tick"/></svg> Easy to clean</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=massage+ball+set" data-q="massage ball set" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=massage+ball+set&amp;tag=azorafit-20" data-q="massage ball set" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -531,7 +590,7 @@
           <p>Add gentle resistance in the pool or the sea, with no stress on your joints.</p>
           <div class="look">What to look for</div>
           <ul><li><svg><use href="#i-tick"/></svg> Webbed gloves or foam dumbbells</li><li><svg><use href="#i-tick"/></svg> Adjustable straps</li><li><svg><use href="#i-tick"/></svg> Quick-drying material</li></ul>
-          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.de/s?k=aqua+fitness+gloves+foam+dumbbells" data-q="aqua fitness gloves foam dumbbells" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
+          <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/s?k=aqua+fitness+gloves+foam+dumbbells&amp;tag=azorafit-20" data-q="aqua fitness gloves foam dumbbells" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
 
@@ -569,7 +628,7 @@
       <h2>Good to know</h2>
     </div>
     <div class="faq reveal">
-      <details><summary>Where do I buy?</summary><p>Every "View on Amazon" button takes you to Amazon, where you pay and get delivery as usual. Azora Fit doesn't sell or ship anything itself.</p></details>
+      <details><summary>Where do I buy?</summary><p>"View on Amazon" takes you to Amazon Brasil and "View on SHEIN" to SHEIN Brasil, where you pay and get delivery as usual. Azora Fit doesn't sell or ship anything itself.</p></details>
       <details><summary>Do I pay more through your links?</summary><p>No. The price is exactly the same. Amazon pays us a small commission, which keeps this site free.</p></details>
       <details><summary>What should I buy first?</summary><p>A mat and a set of resistance bands. With those two you can follow almost any home workout.</p></details>
       <details><summary>Is it safe if I'm pregnant or have an injury?</summary><p>Please check with your doctor or midwife before starting any new exercise or equipment. For a safe plan, see <a href="../shop.html">Kinora's pregnancy ebook</a> or book a session.</p></details>
@@ -582,7 +641,7 @@
     <span>© <span id="year">2026</span> Azora Fit, a Kinora project</span>
     <nav aria-label="Footer"><a href="../">Kinora coaching</a><a href="../legal.html#privacy">Privacy</a><a href="../legal.html#terms">Terms</a><a href="../legal.html#imprint">Imprint</a></nav>
   </div>
-  <div class="container fine">As an Amazon Associate, Azora Fit earns from qualifying purchases. Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.</div>
+  <div class="container fine">As an Amazon Associate, Azora Fit earns from qualifying purchases. Azora Fit is also a SHEIN affiliate. Amazon and SHEIN are trademarks of their respective owners.</div>
 </footer>
 
 <script>
@@ -602,26 +661,18 @@
     });
   }));
 
-  // Amazon links: one store per region. After Amazon Associates approves you, paste each tracking ID:
-  //   eu: Amazon Europe tracking ID (from affiliate-program.amazon.de), for example 'azorafit-21'
-  //   br: Amazon Brasil tracking ID (from associados.amazon.com.br), for example 'azorafit-20'
-  // To use another European store, change 'amazon.de' to 'amazon.fr', 'amazon.co.uk', 'amazon.it' or 'amazon.es'.
-  const STORES = {
-    eu: { domain: 'amazon.de',     tag: '' },
-    br: { domain: 'amazon.com.br', tag: 'azorafit-20' }
-  };
-  const setRegion = r => {
-    const st = STORES[r];
-    document.querySelectorAll('[data-region]').forEach(b => b.setAttribute('aria-pressed', b.dataset.region === r));
-    document.querySelectorAll('[data-q]').forEach(a => {
-      a.href = 'https://www.' + st.domain + '/s?k=' + encodeURIComponent(a.dataset.q).replace(/%20/g, '+') + (st.tag ? '&tag=' + encodeURIComponent(st.tag) : '');
-    });
-    try { localStorage.setItem('azoraRegion', r); } catch (e) {}
-  };
-  let region = 'eu';
-  try { region = localStorage.getItem('azoraRegion') || ((navigator.language || '').toLowerCase().startsWith('pt') ? 'br' : 'eu'); } catch (e) {}
-  setRegion(STORES[region] ? region : 'eu');
-  document.querySelectorAll('[data-region]').forEach(b => b.addEventListener('click', () => setRegion(b.dataset.region)));
+  // Amazon Brasil: your Associates tracking ID
+  const AMAZON = { domain: 'amazon.com.br', tag: 'azorafit-20' };
+  document.querySelectorAll('[data-q]').forEach(a => {
+    a.href = 'https://www.' + AMAZON.domain + '/s?k=' + encodeURIComponent(a.dataset.q).replace(/%20/g, '+') + (AMAZON.tag ? '&tag=' + encodeURIComponent(AMAZON.tag) : '');
+  });
+
+  // SHEIN Brasil: paste each product's affiliate link from the SHEIN app into data-shein="".
+  // While it is empty, the button opens a SHEIN Brasil search for data-sq (no commission).
+  document.querySelectorAll('[data-sq]').forEach(a => {
+    const link = (a.dataset.shein || '').trim();
+    a.href = link || 'https://br.shein.com/pdsearch/' + encodeURIComponent(a.dataset.sq) + '/';
+  });
 </script>
 </body>
 </html>
