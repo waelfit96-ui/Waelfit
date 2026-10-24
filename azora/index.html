@@ -83,6 +83,12 @@
   .disclosure{max-width:860px;margin:0 auto 34px;background:var(--sand);border-left:4px solid var(--coral);border-radius:12px;padding:14px 18px;font-size:.86rem;color:var(--muted)}
   .disclosure b{color:var(--text)}
 
+  /* Region switch */
+  .region{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px;font-size:.86rem;color:var(--muted)}
+  .region-btns{display:inline-flex;background:var(--sand);border-radius:999px;padding:4px}
+  .region-btns button{border:0;background:none;font:inherit;font-weight:700;font-size:.84rem;padding:8px 16px;border-radius:999px;cursor:pointer;color:var(--muted)}
+  .region-btns button[aria-pressed="true"]{background:#fff;color:var(--text);box-shadow:0 2px 8px rgba(11,30,45,.12)}
+
   /* Filters */
   .filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:34px}
   .filter{border:1.5px solid var(--line);background:#fff;color:var(--text);border-radius:999px;padding:9px 18px;font:inherit;font-size:.86rem;font-weight:700;cursor:pointer;transition:.2s}
@@ -216,7 +222,7 @@
      - The button goes to an Amazon search for data-q. To link one exact product,
        paste your Amazon affiliate link (from SiteStripe) into href and delete data-q.
      - Put class="hot" chip on trending items, or remove it.
-     - Your Amazon store and tracking ID are set at the bottom of this file (AMAZON_STORE, AMAZON_TAG).
+     - The Amazon stores and tracking IDs for Europe and Brazil are set at the bottom of this file (STORES).
      Do not write prices: Amazon does not allow fixed prices on your own page. -->
 <section class="section" id="picks">
   <div class="container">
@@ -227,6 +233,13 @@
     </div>
 
     <div class="disclosure reveal"><b>Affiliate disclosure:</b> Azora Fit earns from qualifying purchases as an Amazon Associate. If you buy through our links we may earn a small commission, at no extra cost to you.</div>
+
+    <div class="region reveal"><span>Shop from:</span>
+      <div class="region-btns" role="group" aria-label="Choose your Amazon store">
+        <button data-region="eu" aria-pressed="true">🇪🇺 Europe (amazon.de)</button>
+        <button data-region="br" aria-pressed="false">🇧🇷 Brasil (amazon.com.br)</button>
+      </div>
+    </div>
 
     <div class="filters" role="group" aria-label="Filter products">
       <button class="filter" data-filter="all" aria-pressed="true">All</button>
@@ -435,13 +448,26 @@
     });
   }));
 
-  // Amazon links. After Amazon Associates approves you, set your store and tracking ID here:
-  //   AMAZON_STORE: 'amazon.de' (Germany), 'amazon.fr', 'amazon.co.uk', 'amazon.it', 'amazon.es', 'amazon.com', 'amazon.com.br'
-  //   AMAZON_TAG:   your Associates tracking ID, for example 'azorafit-21'
-  const AMAZON_STORE = 'amazon.de', AMAZON_TAG = '';
-  document.querySelectorAll('[data-q]').forEach(a => {
-    a.href = 'https://www.' + AMAZON_STORE + '/s?k=' + encodeURIComponent(a.dataset.q).replace(/%20/g, '+') + (AMAZON_TAG ? '&tag=' + encodeURIComponent(AMAZON_TAG) : '');
-  });
+  // Amazon links: one store per region. After Amazon Associates approves you, paste each tracking ID:
+  //   eu: Amazon Europe tracking ID (from affiliate-program.amazon.de), for example 'azorafit-21'
+  //   br: Amazon Brasil tracking ID (from associados.amazon.com.br), for example 'azorafit-20'
+  // To use another European store, change 'amazon.de' to 'amazon.fr', 'amazon.co.uk', 'amazon.it' or 'amazon.es'.
+  const STORES = {
+    eu: { domain: 'amazon.de',     tag: '' },
+    br: { domain: 'amazon.com.br', tag: '' }
+  };
+  const setRegion = r => {
+    const st = STORES[r];
+    document.querySelectorAll('[data-region]').forEach(b => b.setAttribute('aria-pressed', b.dataset.region === r));
+    document.querySelectorAll('[data-q]').forEach(a => {
+      a.href = 'https://www.' + st.domain + '/s?k=' + encodeURIComponent(a.dataset.q).replace(/%20/g, '+') + (st.tag ? '&tag=' + encodeURIComponent(st.tag) : '');
+    });
+    try { localStorage.setItem('azoraRegion', r); } catch (e) {}
+  };
+  let region = 'eu';
+  try { region = localStorage.getItem('azoraRegion') || ((navigator.language || '').toLowerCase().startsWith('pt') ? 'br' : 'eu'); } catch (e) {}
+  setRegion(STORES[region] ? region : 'eu');
+  document.querySelectorAll('[data-region]').forEach(b => b.addEventListener('click', () => setRegion(b.dataset.region)));
 </script>
 </body>
 </html>
