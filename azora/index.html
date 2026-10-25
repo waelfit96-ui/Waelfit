@@ -142,6 +142,9 @@
   .shein-zone .filter[aria-pressed="true"]{background:#111;border-color:#111}
   .shein-zone .filter:hover{border-color:#111;color:#111}
   .shein-zone .filter[aria-pressed="true"]:hover{color:#fff}
+  .thumb.has-photo{background:#ECEDF0}
+  .thumb.has-photo img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+  .thumb .chip,.thumb .hot{z-index:1}
   .shein-zone .look{color:#111}
   .shein-zone .card li svg{color:#111}
   @media (max-width:700px){.stores{grid-template-columns:1fr}.stores-bar{padding:40px 0 0}}
@@ -608,7 +611,7 @@
 
     <div class="grid">
       <article class="card reveal" data-cat="sets">
-        <div class="thumb shein"><span class="chip sh">Sets</span><span class="hot">Trending</span><svg class="ic"><use href="#i-legging"/></svg></div>
+        <div class="thumb has-photo"><img class="photo" src="img/shein-seamless-set.webp" alt="Woman wearing a pink halter crop top and high-waist leggings set" width="800" height="800" loading="lazy"><span class="chip sh">Sets</span><span class="hot">Trending</span></div>
         <div class="card-body">
           <h3>Seamless workout set</h3>
           <p>Matching leggings and top: the easiest way to look good and feel confident when you train.</p>
