@@ -145,7 +145,9 @@
   .shein-zone .filter:hover{border-color:#111;color:#111}
   .shein-zone .filter[aria-pressed="true"]:hover{color:#fff}
   .thumb.has-photo{background:#ECEDF0}
-  .shein-zone .thumb.has-photo{aspect-ratio:3/4}
+  .thumb.has-photo{aspect-ratio:3/4}
+  .card>.thumb:not(.has-photo){flex:1 0 auto}
+  .card:has(.has-photo) .card-body,.card>.thumb:not(.has-photo)+.card-body{flex:0 0 auto}
   .thumb.has-photo img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
   .thumb .chip,.thumb .hot{z-index:1}
   .shein-zone .look{color:#111}
@@ -353,7 +355,7 @@
       </article>
 
       <article class="card reveal" data-cat="gym">
-        <div class="thumb c2"><span class="chip">Home gym</span><svg class="ic"><use href="#i-band"/></svg></div>
+        <div class="thumb has-photo"><img class="photo" src="img/amz-tube-kit.webp" alt="Resistance tube kit with five tubes, foam handles, ankle straps and door anchor" width="720" height="1080" loading="lazy"><span class="chip">Home gym</span></div>
         <div class="card-body">
           <h3>Resistance tube kit (11 pieces)</h3>
           <p>Tubes with handles, ankle straps and a door anchor: train like on gym cables, at home, for the whole body.</p>
@@ -364,7 +366,7 @@
       </article>
 
       <article class="card reveal" data-cat="gym">
-        <div class="thumb c4"><span class="chip">Home gym</span><svg class="ic"><use href="#i-wheel"/></svg></div>
+        <div class="thumb has-photo"><img class="photo" src="img/amz-ab-roller.webp" alt="Woman using a wide ab roller wheel with a knee pad" width="720" height="1279" loading="lazy"><span class="chip">Home gym</span></div>
         <div class="card-body">
           <h3>Ab roller wheel</h3>
           <p>A small, simple tool for a strong core. Start on your knees with short rolls, and keep your back straight.</p>
@@ -386,7 +388,7 @@
       </article>
 
       <article class="card reveal" data-cat="gym">
-        <div class="thumb"><span class="chip">Home gym</span><svg class="ic"><use href="#i-pullup"/></svg></div>
+        <div class="thumb has-photo"><img class="photo" src="img/amz-pullup-bar.webp" alt="Man doing pull-ups on an adjustable door pull-up bar" width="720" height="1281" loading="lazy"><span class="chip">Home gym</span></div>
         <div class="card-body">
           <h3>Door pull-up bar</h3>
           <p>Fits inside a door frame with no drilling: pull-ups, chin-ups and hanging knee raises for your back, arms and core.</p>
@@ -397,7 +399,7 @@
       </article>
 
       <article class="card reveal" data-cat="gym">
-        <div class="thumb c3"><span class="chip">Home gym</span><svg class="ic"><use href="#i-pushup"/></svg></div>
+        <div class="thumb has-photo"><img class="photo" src="img/amz-pushup-bars.webp" alt="Man doing push-ups on black and red push-up bars" width="720" height="1080" loading="lazy"><span class="chip">Home gym</span></div>
         <div class="card-body">
           <h3>Push-up bars</h3>
           <p>Keep your wrists straight and go deeper in push-ups. Also great for dips, planks and Pilates support work.</p>
@@ -419,7 +421,7 @@
       </article>
 
       <article class="card reveal" data-cat="gym">
-        <div class="thumb c3"><span class="chip">Home gym</span><svg class="ic"><use href="#i-mat"/></svg></div>
+        <div class="thumb has-photo"><img class="photo" src="img/amz-yoga-mat.webp" alt="Purple yoga mat being rolled out, 173 x 61 cm, 6 mm thick" width="720" height="1281" loading="lazy"><span class="chip">Home gym</span></div>
         <div class="card-body">
           <h3>Yoga &amp; Pilates mat</h3>
           <p>A thinner, grippy mat for yoga, Pilates and meditation, with steady balance in standing poses. Available in several colours.</p>
@@ -441,7 +443,7 @@
       </article>
 
       <article class="card reveal" data-cat="gym">
-        <div class="thumb c4"><span class="chip">Home gym</span><svg class="ic"><use href="#i-kettle"/></svg></div>
+        <div class="thumb has-photo"><img class="photo" src="img/amz-kettlebell.webp" alt="Man and woman training with black 6 kg kettlebells" width="720" height="1080" loading="lazy"><span class="chip">Home gym</span></div>
         <div class="card-body">
           <h3>Kettlebell 6 kg or 6.8 kg</h3>
           <p>One weight for swings, goblet squats, deadlifts and core work: glutes, legs and abs in a short home workout.</p>
@@ -452,7 +454,7 @@
       </article>
 
       <article class="card reveal" data-cat="gym">
-        <div class="thumb "><span class="chip">Home gym</span><span class="hot">Trending</span><svg class="ic"><use href="#i-vest"/></svg></div>
+        <div class="thumb has-photo"><img class="photo" src="img/amz-weighted-vest.webp" alt="Man running outdoors wearing a black weighted vest" width="720" height="864" loading="lazy"><span class="chip">Home gym</span><span class="hot">Trending</span></div>
         <div class="card-body">
           <h3>Weighted vest</h3>
           <p>Turns walks and simple moves into strength training, without extra gym time.</p>
@@ -474,12 +476,12 @@
       </article>
 
       <article class="card reveal" data-cat="gym">
-        <div class="thumb c4"><span class="chip">Home gym</span><svg class="ic"><use href="#i-ball"/></svg></div>
+        <div class="thumb has-photo"><img class="photo" src="img/amz-exercise-ball.webp" alt="Woman doing a glute bridge with her feet on a blue 55 cm exercise ball" width="720" height="1281" loading="lazy"><span class="chip">Home gym</span></div>
         <div class="card-body">
           <h3>Exercise ball</h3>
           <p>For core work, posture at your desk and pregnancy and birth preparation.</p>
           <div class="look">What to look for</div>
-          <ul><li><svg><use href="#i-tick"/></svg> 65 cm suits most people up to 1.75 m</li><li><svg><use href="#i-tick"/></svg> Labelled "anti-burst"</li><li><svg><use href="#i-tick"/></svg> Comes with a pump</li></ul>
+          <ul><li><svg><use href="#i-tick"/></svg> Pick the size for your height: 55 cm up to about 1.65 m, 65 cm for most taller people</li><li><svg><use href="#i-tick"/></svg> Labelled "anti-burst"</li><li><svg><use href="#i-tick"/></svg> Comes with a pump</li></ul>
           <div class="buy"><small><b>Check price</b>on Amazon</small><a href="https://www.amazon.com.br/dp/B0HBCWHYZY?tag=azorafit-20&amp;linkCode=ml1&amp;linkId=9d78a00565afb0e5609f710e33fb18c6" target="_blank" rel="sponsored nofollow noopener" class="btn btn-azure">View on Amazon <svg><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
