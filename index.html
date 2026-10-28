@@ -331,6 +331,24 @@
   .reveal.visible{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
+  /* App */
+  .app{background:var(--dark);color:#fff;border-top:1px solid var(--line)}
+  .app-wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:56px;align-items:center}
+  .app-poster{display:block;border-radius:20px;overflow:hidden;box-shadow:0 24px 70px rgba(139,79,216,.35);border:1px solid var(--line);max-width:420px;justify-self:center}
+  .app-poster img{display:block;width:100%;height:auto}
+  .app-text h2{font-size:clamp(2rem,4vw,2.8rem);margin:10px 0 14px}
+  .app-text>p{color:var(--muted-dark)}
+  .app-feats{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0}
+  .app-feats li{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:14px;padding:16px;background:rgba(255,255,255,.02)}
+  .app-feats svg{width:24px;height:24px;color:var(--accent-2);flex-shrink:0}
+  .app-feats b{display:block;font-size:.92rem}
+  .app-feats small{color:var(--muted-dark);font-size:.8rem}
+  .app-buy{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+  .app-buy .amount{font-family:"Barlow Condensed";font-size:2.6rem;font-weight:700;line-height:1}
+  .app-buy .amount small{display:block;font-family:inherit;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-2);margin-bottom:4px}
+  @media (max-width:900px){.app-wrap{grid-template-columns:1fr;gap:40px}.app-poster{max-width:360px}}
+  @media (max-width:480px){.app-feats{grid-template-columns:1fr}}
+
   /* Responsive */
   @media (max-width:1080px){
     .nav-links{gap:22px}
@@ -447,6 +465,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#programs">Programs</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#app">App</a></li>
       <li><a href="shop.html">Ebooks</a></li>
       <li><a href="azora/">Store</a></li>
       <li><a href="#gallery">Gallery</a></li>
@@ -643,6 +662,30 @@
   </div>
 </section>
 
+<!-- KinoraFit App -->
+<section class="section app on-dark" id="app">
+  <div class="container app-wrap">
+    <a class="app-poster reveal" href="https://kinorafit-app.netlify.app" target="_blank" rel="noopener"><img src="images/kinorafit-app.webp" alt="KinoraFit app: Coach Wael next to a phone showing the app's workout plan, workouts and progress screens. Go Premium for €14.99." width="720" height="1281" loading="lazy"></a>
+    <div class="app-text reveal">
+      <span class="eyebrow">New · The KinoraFit App</span>
+      <h2 class="h-serif">Unlock Your <em>Full Potential</em></h2>
+      <p>Personalized training for real results. Follow my workout plans on your phone, watch every exercise and track your progress, wherever you are.</p>
+      <ul class="app-feats">
+          <li><svg><use href="#i-dumbbell"/></svg><div><b>Premium workout plans</b><small>Strength, cardio, mobility and core</small></div></li>
+          <li><svg><use href="#i-target"/></svg><div><b>Expert guidance</b><small>Train smarter, not harder</small></div></li>
+          <li><svg><use href="#i-video"/></svg><div><b>HD video demonstrations</b><small>See the right form for every exercise</small></div></li>
+          <li><svg><use href="#i-chart"/></svg><div><b>Track your progress</b><small>See your results and stay motivated</small></div></li>
+          <li><svg><use href="#i-phone"/></svg><div><b>Access anywhere</b><small>On your phone, anytime</small></div></li>
+          <li><svg><use href="#i-users"/></svg><div><b>For every level</b><small>Plans for beginners and experienced</small></div></li>
+      </ul>
+      <div class="app-buy">
+        <div class="amount"><small>Go Premium</small>€14.99</div>
+        <a href="https://kinorafit-app.netlify.app" target="_blank" rel="noopener" class="btn btn-primary">Go Premium <svg><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Gallery -->
 <section class="section" id="gallery">
   <div class="container">
@@ -733,7 +776,7 @@
           <a href="https://www.linkedin.com/in/wael-dridi-254641128" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-in"/></svg></a>
         </div>
       </div>
-      <div><h4>Quick Links</h4><ul><li><a href="#about">About Me</a></li><li><a href="#programs">Programs</a></li><li><a href="#pricing">Pricing</a></li><li><a href="shop.html">Ebooks</a></li><li><a href="azora/">Store</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Quick Links</h4><ul><li><a href="#about">About Me</a></li><li><a href="#programs">Programs</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#app">KinoraFit App</a></li><li><a href="shop.html">Ebooks</a></li><li><a href="azora/">Store</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li></ul></div>
       <div><h4>Services</h4><ul><li><a href="#programs">Yoga & Pilates</a></li><li><a href="#programs">Functional, Core & Back</a></li><li><a href="#programs">Mobility & Stretching</a></li><li><a href="#programs">Pregnancy Training</a></li><li><a href="shop.html">Ebooks</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="mailto:waelfit01@gmail.com">waelfit01@gmail.com</a></li><li><a href="https://wa.me/5511985636163" target="_blank" rel="noopener">WhatsApp: +55 11 98563-6163</a></li><li>Available every day · 7/7</li><li>Coaching women across Europe</li></ul>
         <p style="margin-top:12px;font-size:.78rem">We accept PayPal, Mastercard & credit cards</p></div>
