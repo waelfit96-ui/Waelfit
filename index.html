@@ -347,6 +347,10 @@
   .app-buy .amount{font-family:"Barlow Condensed";font-size:2.6rem;font-weight:700;line-height:1}
   .app-buy .amount small{display:block;font-family:inherit;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-2);margin-bottom:4px}
   .app-buy .per{font-family:Inter,sans-serif;font-size:1rem;font-weight:500;color:var(--muted-dark)}
+  .app-preview{display:inline-flex;align-items:center;gap:8px;color:var(--accent-2);font-weight:600;font-size:.9rem}
+  .app-preview svg{width:15px;height:15px}
+  .app-preview:hover{color:#fff}
+  .app-note{margin-top:16px;font-size:.85rem;color:var(--muted-dark)}
   @media (max-width:900px){.app-wrap{grid-template-columns:1fr;gap:40px}.app-poster{max-width:360px}}
   @media (max-width:480px){.app-feats{grid-template-columns:1fr}}
 
@@ -681,8 +685,10 @@
       </ul>
       <div class="app-buy">
         <div class="amount"><small>Go Premium</small>€14.99<span class="per"> / month</span></div>
-        <a href="https://kinorafit-app.netlify.app" target="_blank" rel="noopener" class="btn btn-primary">Go Premium <svg><use href="#i-arrow"/></svg></a>
+        <a href="#" data-wa="Hello Wael, I would like to go Premium on the KinoraFit app (€14.99 per month). How can I pay?" class="btn btn-primary"><svg><use href="#i-wa"/></svg> Go Premium</a>
+        <a href="https://kinorafit-app.netlify.app" target="_blank" rel="noopener" class="app-preview">Preview the app <svg><use href="#i-arrow"/></svg></a>
       </div>
+      <p class="app-note">Tap Go Premium to message me on WhatsApp. I confirm your payment and activate your Premium access.</p>
     </div>
   </div>
 </section>
