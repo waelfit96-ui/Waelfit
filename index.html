@@ -331,28 +331,43 @@
   .reveal.visible{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
-  /* App */
-  .app{background:var(--dark);color:#fff;border-top:1px solid var(--line)}
-  .app-wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:56px;align-items:center}
-  .app-poster{display:block;border-radius:20px;overflow:hidden;box-shadow:0 24px 70px rgba(139,79,216,.35);border:1px solid var(--line);max-width:420px;justify-self:center}
-  .app-poster img{display:block;width:100%;height:auto}
-  .app-text h2{font-size:clamp(2rem,4vw,2.8rem);margin:10px 0 14px}
-  .app-text>p{color:var(--muted-dark)}
-  .app-feats{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0}
-  .app-feats li{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:14px;padding:16px;background:rgba(255,255,255,.02)}
-  .app-feats svg{width:24px;height:24px;color:var(--accent-2);flex-shrink:0}
-  .app-feats b{display:block;font-size:.92rem}
-  .app-feats small{color:var(--muted-dark);font-size:.8rem}
-  .app-buy{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
-  .app-buy .amount{font-family:"Barlow Condensed";font-size:2.6rem;font-weight:700;line-height:1}
-  .app-buy .amount small{display:block;font-family:inherit;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-2);margin-bottom:4px}
-  .app-buy .per{font-family:Inter,sans-serif;font-size:1rem;font-weight:500;color:var(--muted-dark)}
-  .app-preview{display:inline-flex;align-items:center;gap:8px;color:var(--accent-2);font-weight:600;font-size:.9rem}
-  .app-preview svg{width:15px;height:15px}
-  .app-preview:hover{color:#fff}
-  .app-note{margin-top:16px;font-size:.85rem;color:var(--muted-dark)}
-  @media (max-width:900px){.app-wrap{grid-template-columns:1fr;gap:40px}.app-poster{max-width:360px}}
-  @media (max-width:480px){.app-feats{grid-template-columns:1fr}}
+  /* Calculator */
+  .calc{background:var(--light)}
+  .calc-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start}
+  form.calc-form{background:#fff;border-radius:18px;padding:32px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .calc-form .full{grid-column:1/-1}
+  .seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .seg input{position:absolute;opacity:0;width:1px;height:1px}
+  .seg label{margin:0;text-align:center;padding:12px;border:1px solid #dcd8e6;border-radius:10px;font-size:.9rem;font-weight:600;cursor:pointer;transition:.2s}
+  .seg input:checked+label{background:var(--accent);border-color:var(--accent);color:#fff}
+  .seg input:focus-visible+label{box-shadow:0 0 0 3px rgba(139,79,216,.3)}
+  .unit{position:relative}
+  .unit span{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:.85rem;color:var(--muted);pointer-events:none}
+  .unit input{padding-right:46px}
+  .calc-form .btn{justify-content:center}
+  .calc-err{grid-column:1/-1;display:none;background:#fef2f2;color:#991b1b;padding:12px 14px;border-radius:10px;font-size:.88rem}
+  .calc-res{background:var(--dark);color:#fff;border-radius:18px;padding:32px;position:relative;overflow:hidden}
+  .calc-res::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 80% 0%,rgba(139,79,216,.28),transparent 70%);pointer-events:none}
+  .calc-res>*{position:relative}
+  .calc-empty{color:var(--muted-dark);font-size:.95rem;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+  .calc-empty svg{width:40px;height:40px;color:var(--accent-2)}
+  .res-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+  .res{border:1px solid var(--line);border-radius:14px;padding:16px;background:rgba(255,255,255,.03)}
+  .res small{display:block;color:var(--muted-dark);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+  .res b{display:block;font-family:"Barlow Condensed";font-size:2rem;line-height:1.1;margin-top:4px}
+  .res em{font-style:normal;color:var(--accent-2);font-size:.82rem}
+  .res.wide{grid-column:1/-1}
+  .bmi-bar{position:relative;height:10px;border-radius:6px;margin:12px 0 6px;background:linear-gradient(90deg,#60a5fa 0 14%,#34d399 14% 40%,#fbbf24 40% 60%,#f87171 60%)}
+  .bmi-bar i{position:absolute;top:-4px;width:4px;height:18px;border-radius:2px;background:#fff;box-shadow:0 0 0 2px var(--dark);transform:translateX(-50%)}
+  .bmi-scale{position:relative;height:14px;font-size:.7rem;color:var(--muted-dark)}
+  .bmi-scale span{position:absolute;transform:translateX(-50%)}
+  .bmi-scale span:first-child{transform:none}
+  .bmi-scale span:last-child{transform:translateX(-100%)}
+  .calc-note{font-size:.78rem;color:var(--muted-dark);margin-top:14px}
+  .calc-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .calc-cta .btn{padding:12px 18px}
+  @media (max-width:900px){.calc-wrap{grid-template-columns:1fr}}
+  @media (max-width:480px){form.calc-form,.calc-res{padding:22px}.res b{font-size:1.7rem}}
 
   /* Responsive */
   @media (max-width:1080px){
@@ -432,7 +447,7 @@
     <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
     <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></symbol>
     <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
-    <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></symbol><symbol id="i-video" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></symbol>
     <symbol id="i-lotus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20c-4 0-8-2-9-6 3-1 6 0 9 3 3-3 6-4 9-3-1 4-5 6-9 6z"/><path d="M12 17c-2-2-3-5-2-9l2-3 2 3c1 4 0 7-2 9z"/></symbol>
     <symbol id="i-stretch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><path d="M4 9l8 1 8-1M12 10v5l-4 6M12 15l4 6"/></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-8-4.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 9c0 6.5-8 11-8 11z"/></symbol>
@@ -470,7 +485,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#programs">Programs</a></li>
       <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#app">App</a></li>
+      <li><a href="#calculator">Calculator</a></li>
       <li><a href="shop.html">Ebooks</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -606,7 +621,7 @@
     <div class="section-head reveal">
       <span class="eyebrow">Plans & Prices</span>
       <h2 class="h-serif">Invest in Yourself</h2>
-      <p>Choose live one-to-one coaching, or learn on your own with my illustrated ebooks. Coaching and ebooks have no subscription: pay per session, or pay once per ebook.</p>
+      <p>Choose live one-to-one coaching, or learn on your own with my illustrated ebooks. No subscriptions: pay per session, or pay once per ebook.</p>
     </div>
     <div class="price-grid">
       <div class="price reveal">
@@ -666,28 +681,55 @@
   </div>
 </section>
 
-<!-- KinoraFit App -->
-<section class="section app on-dark" id="app">
-  <div class="container app-wrap">
-    <a class="app-poster reveal" href="https://kinorafit-app.netlify.app" target="_blank" rel="noopener"><img src="images/kinorafit-app.webp" alt="KinoraFit app: Coach Wael next to a phone showing the app's workout plan, workouts and progress screens. Go Premium for €14.99 per month." width="720" height="1281" loading="lazy"></a>
-    <div class="app-text reveal">
-      <span class="eyebrow">New · The KinoraFit App</span>
-      <h2 class="h-serif">Unlock Your <em>Full Potential</em></h2>
-      <p>Personalized training for real results. Follow my workout plans on your phone, see every exercise in clear pictures and track your progress, wherever you are.</p>
-      <ul class="app-feats">
-          <li><svg><use href="#i-dumbbell"/></svg><div><b>Premium workout plans</b><small>Strength, cardio, mobility and core</small></div></li>
-          <li><svg><use href="#i-target"/></svg><div><b>Expert guidance</b><small>Train smarter, not harder</small></div></li>
-          <li><svg><use href="#i-image"/></svg><div><b>Premium exercise pictures</b><small>See the right form for every exercise. Pro fitness videos coming soon.</small></div></li>
-          <li><svg><use href="#i-chart"/></svg><div><b>Track your progress</b><small>See your results and stay motivated</small></div></li>
-          <li><svg><use href="#i-phone"/></svg><div><b>Access anywhere</b><small>On your phone, anytime</small></div></li>
-          <li><svg><use href="#i-users"/></svg><div><b>For every level</b><small>Plans for beginners and advanced</small></div></li>
-      </ul>
-      <div class="app-buy">
-        <div class="amount"><small>Go Premium</small>€14.99<span class="per"> / month</span></div>
-        <a href="#" data-wa="Hello Wael, I would like to go Premium on the KinoraFit app (€14.99 per month). How can I pay?" class="btn btn-primary"><svg><use href="#i-wa"/></svg> Go Premium</a>
-        <a href="https://kinorafit-app.netlify.app" target="_blank" rel="noopener" class="app-preview">Preview the app <svg><use href="#i-arrow"/></svg></a>
+<!-- Free calculator -->
+<section class="section calc" id="calculator">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Free Tool</span>
+      <h2 class="h-serif">Your Body &amp; Nutrition Calculator</h2>
+      <p>Find your BMI, an estimate of your body fat, and how many calories, protein, fat and carbs you need each day, based on your age, height, weight and daily activity.</p>
+    </div>
+    <div class="calc-wrap">
+      <form class="calc-form reveal" id="calcForm" novalidate>
+        <div class="full">
+          <label>Sex</label>
+          <div class="seg" role="radiogroup" aria-label="Sex">
+            <input type="radio" name="c-sex" id="c-f" value="f" checked><label for="c-f">Woman</label>
+            <input type="radio" name="c-sex" id="c-m" value="m"><label for="c-m">Man</label>
+          </div>
+        </div>
+        <div><label for="c-age">Age</label><div class="unit"><input id="c-age" type="number" inputmode="numeric" min="18" max="100" placeholder="35" required><span>years</span></div></div>
+        <div><label for="c-height">Height</label><div class="unit"><input id="c-height" type="number" inputmode="decimal" min="120" max="230" step="0.5" placeholder="165" required><span>cm</span></div></div>
+        <div class="full"><label for="c-weight">Weight</label><div class="unit"><input id="c-weight" type="number" inputmode="decimal" min="30" max="300" step="0.1" placeholder="65" required><span>kg</span></div></div>
+        <div class="full">
+          <label for="c-activity">Daily activity</label>
+          <select id="c-activity">
+            <option value="1.2">Sitting most of the day, little or no exercise</option>
+            <option value="1.375" selected>Light: exercise 1–3 days a week</option>
+            <option value="1.55">Moderate: exercise 3–5 days a week</option>
+            <option value="1.725">Active: hard exercise 6–7 days a week</option>
+            <option value="1.9">Very active: physical job plus training</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="c-goal">Your goal</label>
+          <select id="c-goal">
+            <option value="lose">Lose fat</option>
+            <option value="keep" selected>Keep my weight</option>
+            <option value="gain">Build muscle</option>
+          </select>
+        </div>
+        <p class="calc-err" id="calcErr" role="alert"></p>
+        <button type="submit" class="btn btn-primary full">Calculate <svg><use href="#i-arrow"/></svg></button>
+        <p class="form-note full">Your numbers stay on your device: nothing is sent or saved.</p>
+      </form>
+
+      <div class="calc-res reveal" id="calcRes" aria-live="polite">
+        <div class="calc-empty">
+          <svg><use href="#i-chart"/></svg>
+          <p>Fill in your details and tap <b>Calculate</b> to see your results here.</p>
+        </div>
       </div>
-      <p class="app-note">Tap Go Premium to message me on WhatsApp. I confirm your payment and activate your Premium access.</p>
     </div>
   </div>
 </section>
@@ -722,7 +764,7 @@
       <details><summary>Which languages do you coach in?</summary><p>I coach in English, French, German and Arabic, and I schedule sessions to fit your local time zone.</p></details>
       <details><summary>Do I need equipment?</summary><p>No gym needed. A mat is enough for most sessions; light dumbbells or a resistance band are a nice extra.</p></details>
       <details><summary>How can I pay?</summary><p>You can pay securely with PayPal, Mastercard or any major credit or debit card.</p></details>
-      <details><summary>Is there a subscription?</summary><p>Not for coaching or ebooks: you pay per coaching session, and each ebook is a one-time payment, so the PDF is yours to keep. The only subscription is the optional KinoraFit App Premium (€14.99 per month), which you can cancel at any time.</p></details>
+      <details><summary>Is there a subscription?</summary><p>No. You pay per coaching session, and each ebook is a one-time payment: the PDF is yours to keep.</p></details>
     </div>
   </div>
 </section>
@@ -782,7 +824,7 @@
           <a href="https://www.linkedin.com/in/wael-dridi-254641128" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-in"/></svg></a>
         </div>
       </div>
-      <div><h4>Quick Links</h4><ul><li><a href="#about">About Me</a></li><li><a href="#programs">Programs</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#app">KinoraFit App</a></li><li><a href="shop.html">Ebooks</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Quick Links</h4><ul><li><a href="#about">About Me</a></li><li><a href="#programs">Programs</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#calculator">Free Calculator</a></li><li><a href="shop.html">Ebooks</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li></ul></div>
       <div><h4>Services</h4><ul><li><a href="#programs">Yoga & Pilates</a></li><li><a href="#programs">Functional, Core & Back</a></li><li><a href="#programs">Mobility & Stretching</a></li><li><a href="#programs">Pregnancy Training</a></li><li><a href="shop.html">Ebooks</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="mailto:waelfit01@gmail.com">waelfit01@gmail.com</a></li><li><a href="https://wa.me/5511985636163" target="_blank" rel="noopener">WhatsApp: +55 11 98563-6163</a></li><li>Available every day · 7/7</li><li>Coaching women across Europe</li></ul>
         <p style="margin-top:12px;font-size:.78rem">We accept PayPal, Mastercard & credit cards</p></div>
@@ -851,6 +893,68 @@
     window.location.href = 'mailto:waelfit01@gmail.com?subject=' + encodeURIComponent('Kinora request – ' + d.get('goal') + ' – ' + d.get('name')) + '&body=' + encodeURIComponent(body);
     document.getElementById('formOk').style.display = 'block';
   });
+// Free body & nutrition calculator (estimates only; runs in the browser)
+(() => {
+  const form = document.getElementById('calcForm');
+  if (!form) return;
+  const out = document.getElementById('calcRes'), err = document.getElementById('calcErr');
+  const num = id => parseFloat(String(document.getElementById(id).value).replace(',', '.'));
+  const r = (n, step = 1) => Math.round(n / step) * step;
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const male = form.querySelector('input[name="c-sex"]:checked').value === 'm';
+    const age = num('c-age'), h = num('c-height'), w = num('c-weight');
+    const act = parseFloat(document.getElementById('c-activity').value), goal = document.getElementById('c-goal').value;
+    const bad = [];
+    if (!(age >= 18 && age <= 100)) bad.push('age between 18 and 100');
+    if (!(h >= 120 && h <= 230)) bad.push('height between 120 and 230 cm');
+    if (!(w >= 30 && w <= 300)) bad.push('weight between 30 and 300 kg');
+    if (bad.length) { err.textContent = 'Please enter your ' + bad.join(', ') + '.'; err.style.display = 'block'; return; }
+    err.style.display = 'none';
+
+    const m = h / 100, bmi = w / (m * m);
+    const cats = [[18.5, 'Underweight'], [25, 'Healthy weight'], [30, 'Overweight'], [35, 'Obesity (class 1)'], [40, 'Obesity (class 2)'], [Infinity, 'Obesity (class 3)']];
+    const cat = cats.find(c => bmi < c[0])[1];
+    const pos = Math.min(Math.max((bmi - 15) / 25 * 100, 0), 100);
+    // Body fat estimate: Deurenberg formula (BMI, age, sex)
+    const fat = Math.max(1.2 * bmi + 0.23 * age - 10.8 * (male ? 1 : 0) - 5.4, 3);
+    // Calories: Mifflin-St Jeor resting energy x activity, adjusted for the goal
+    const bmr = 10 * w + 6.25 * h - 5 * age + (male ? 5 : -161);
+    let kcal = bmr * act;
+    if (goal === 'lose') kcal = Math.max(kcal * 0.85, male ? 1500 : 1200);
+    if (goal === 'gain') kcal *= 1.1;
+    // Protein per kg, using a healthy-BMI reference weight when BMI is above 25
+    const refW = Math.min(w, 25 * m * m);
+    const pk = goal === 'keep' ? (age >= 65 ? 1.4 : 1.2) : 1.6;
+    const protein = refW * pk;
+    const fatG = kcal * 0.3 / 9;
+    const carbs = Math.max((kcal - protein * 4 - fatG * 9) / 4, 0);
+    const goalTxt = { lose: 'to lose fat', keep: 'to keep your weight', gain: 'to build muscle' }[goal];
+    const msg = `Hello Wael, I used your calculator (${r(kcal, 10)} kcal, ${r(protein)} g protein a day). I would like a personal plan.`;
+
+    out.innerHTML = `
+      <span class="eyebrow">Your results</span>
+      <div class="res-grid">
+        <div class="res wide"><small>BMI (body mass index)</small><b>${bmi.toFixed(1)}</b><em>${cat}</em>
+          <div class="bmi-bar" aria-hidden="true"><i style="left:${pos}%"></i></div>
+          <div class="bmi-scale" aria-hidden="true"><span style="left:0">15</span><span style="left:14%">18.5</span><span style="left:40%">25</span><span style="left:60%">30</span><span style="left:100%">40</span></div></div>
+        <div class="res"><small>Body fat (estimate)</small><b>≈ ${r(fat)}%</b><em>From BMI, age and sex</em></div>
+        <div class="res"><small>Calories a day</small><b>${r(kcal, 10)}</b><em>kcal ${goalTxt}</em></div>
+        <div class="res"><small>Protein</small><b>${r(protein)} g</b><em>a day (${pk} g per kg${refW < w ? ' of healthy weight' : ''})</em></div>
+        <div class="res"><small>Fat</small><b>${r(fatG)} g</b><em>a day (30% of calories)</em></div>
+        <div class="res wide"><small>Carbohydrates</small><b>${r(carbs)} g</b><em>a day (the rest of your calories)</em></div>
+      </div>
+      <p class="calc-note">These are estimates from standard formulas (WHO BMI ranges, Mifflin-St Jeor, Deurenberg). BMI and body fat estimates are less accurate for very muscular people and older adults. This is not medical advice and is not suitable during pregnancy or breastfeeding, or for people under 18. Talk to your doctor before big changes to your diet.</p>
+      <div class="calc-cta">
+        <a href="#" class="btn btn-primary" id="calcWa"><svg><use href="#i-wa"/></svg> Get a personal plan</a>
+        <a href="shop.html" class="btn btn-outline">Healthy eating ebook</a>
+      </div>`;
+    const wa = document.getElementById('calcWa');
+    wa.href = 'https://wa.me/5511985636163?text=' + encodeURIComponent(msg);
+    wa.target = '_blank'; wa.rel = 'noopener';
+    if (window.innerWidth < 900) out.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();
 </script>
 </body>
 </html>
