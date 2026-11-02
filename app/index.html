@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Form Coach | Kinora</title>
+<meta name="description" content="Kinora Form Coach: film yourself or take a photo and get a full biomechanics and anatomy report of every movement. Runs privately on your phone.">
+<link rel="canonical" href="https://kinorafit.online/app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kinora">
+<meta property="og:title" content="Kinora Form Coach">
+<meta property="og:description" content="Film your workout, get a rep-by-rep biomechanics and anatomy report. Private: the video never leaves your phone.">
+<meta property="og:image" content="https://kinorafit.online/images/og-image.jpg">
+<meta name="theme-color" content="#0B0A10">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<header class="top">
+  <a href="../" class="brand" aria-label="Kinora home"><img src="../images/logo.webp" alt="" width="36" height="36"><span>KINORA <b>Form Coach</b></span></a>
+  <div class="quota" id="quotaChip" title="Analysis time left today"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" class="q-bg"/><circle cx="18" cy="18" r="15" class="q-fg" id="quotaRing"/></svg><span><b id="quotaMin">60</b> min left today</span></div>
+</header>
+
+<main>
+<!-- ============ HOME ============ -->
+<section id="home" class="screen">
+  <div class="hero">
+    <p class="eyebrow">Biomechanics on your phone</p>
+    <h1>Every rep, <em>analysed.</em></h1>
+    <p class="lead">Film yourself or take a photo. Form Coach tracks 33 body points, measures your joint angles in real time and gives you a full biomechanics and anatomy report at the end of the session.</p>
+    <div class="stats">
+      <div><b id="statToday">0</b><small>min used today</small></div>
+      <div><b id="statStreak">0</b><small>day streak</small></div>
+      <div><b id="statBest">–</b><small>best score</small></div>
+    </div>
+  </div>
+
+  <div class="card today" id="todayCard"></div>
+
+  <div class="step">
+    <h2><span>1</span> Choose your exercise</h2>
+    <div class="ex-grid" id="exGrid" role="radiogroup" aria-label="Exercise"></div>
+    <p class="setup-tip" id="setupTip"></p>
+  </div>
+
+  <div class="step">
+    <h2><span>2</span> Choose how to analyse</h2>
+    <div class="modes" role="radiogroup" aria-label="Mode">
+      <button class="mode" data-mode="live" aria-pressed="true"><svg><use href="#i-cam"/></svg><b>Live camera</b><small>Real-time cues while you train</small></button>
+      <button class="mode" data-mode="video" aria-pressed="false"><svg><use href="#i-film"/></svg><b>Upload a video</b><small>Analyse a clip you already filmed</small></button>
+      <button class="mode" data-mode="photo" aria-pressed="false"><svg><use href="#i-photo"/></svg><b>Photo</b><small>Posture or one key position</small></button>
+    </div>
+  </div>
+
+  <details class="settings">
+    <summary>Settings</summary>
+    <label class="row"><input type="checkbox" id="optVoice" checked> Spoken coaching cues</label>
+    <label class="row"><input type="checkbox" id="optRecord"> Save the annotated video at the end</label>
+    <label class="row">Precision
+      <select id="optPrecision"><option value="full">High (recommended)</option><option value="lite">Fast (older phones)</option></select>
+    </label>
+    <label class="row">Camera
+      <select id="optFacing"><option value="user">Front (selfie)</option><option value="environment">Back</option></select>
+    </label>
+  </details>
+
+  <button class="btn btn-primary btn-start" id="startBtn">Start analysis <svg><use href="#i-arrow"/></svg></button>
+  <p class="limit-note" id="limitNote">Up to 60 minutes of analysis per day. Your allowance resets every night at midnight.</p>
+
+  <div class="card guide">
+    <h3>For the most precise analysis</h3>
+    <ol>
+      <li><b>Whole body in view</b>, from head to feet, the entire time.</li>
+      <li><b>Phone at hip height</b>, 2 to 3 metres away, held still (lean it on something).</li>
+      <li><b>Pick the right angle</b>: side view for depth and back angle, front view for knees and symmetry.</li>
+      <li><b>Good light</b> in front of you, no bright window behind you.</li>
+      <li><b>Fitted clothes</b> so your joints are visible.</li>
+    </ol>
+  </div>
+
+  <div class="step" id="progressBlock">
+    <h2>Your progress</h2>
+    <div class="card"><div id="chart" class="chart"></div></div>
+    <div id="recent" class="recent"></div>
+  </div>
+
+  <p class="privacy"><svg><use href="#i-lock"/></svg> Private by design: the video is analysed on your phone and is never uploaded. Your history stays on this device.</p>
+</section>
+
+<!-- ============ SESSION ============ -->
+<section id="session" class="screen" hidden>
+  <div class="stage" id="stage">
+    <video id="video" playsinline muted></video>
+    <canvas id="canvas"></canvas>
+    <div class="hud hud-tl"><div class="big" id="hudCount">0</div><small id="hudCountLabel">reps</small></div>
+    <div class="hud hud-tr"><div id="hudTime">0:00</div><small id="hudLeft">60 min left</small></div>
+    <div class="hud-angles" id="hudAngles"></div>
+    <div class="center-msg" id="centerMsg"></div>
+    <div class="cue" id="cue" hidden></div>
+    <div class="loading" id="loading" hidden><div class="spinner"></div><p id="loadingText">Loading the AI model…</p></div>
+  </div>
+  <div class="controls">
+    <button class="ctrl" id="pauseBtn" aria-label="Pause"><svg><use href="#i-pause"/></svg><span>Pause</span></button>
+    <button class="ctrl stop" id="stopBtn"><svg><use href="#i-stop"/></svg><span>Finish &amp; analyse</span></button>
+    <button class="ctrl" id="flipBtn" aria-label="Switch camera"><svg><use href="#i-flip"/></svg><span>Flip</span></button>
+    <button class="ctrl" id="voiceBtn" aria-label="Voice cues"><svg><use href="#i-sound"/></svg><span>Voice</span></button>
+  </div>
+  <p class="session-ex" id="sessionEx"></p>
+</section>
+
+<!-- ============ REPORT ============ -->
+<section id="report" class="screen" hidden></section>
+</main>
+
+<input type="file" id="videoInput" accept="video/*" hidden>
+<input type="file" id="photoInput" accept="image/*" hidden>
+<div class="sheet" id="photoSheet" hidden>
+  <div class="sheet-card">
+    <h3>Photo analysis</h3>
+    <p id="photoHint"></p>
+    <button class="btn btn-primary" id="photoTake"><svg><use href="#i-cam"/></svg> Take a photo</button>
+    <button class="btn btn-ghost" id="photoPick"><svg><use href="#i-photo"/></svg> Choose from gallery</button>
+    <button class="btn-link" id="photoCancel">Cancel</button>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 8a2 2 0 0 1 2-2h2l2-2h6l2 2h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="currentColor" d="M10 9v6l5-3z"/></symbol>
+  <symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="2" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 17l5-5 4 4 3-3 6 6"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path fill="currentColor" d="M7 5h4v14H7zM13 5h4v14h-4z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 5l12 7-12 7z"/></symbol>
+  <symbol id="i-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor"/></symbol>
+  <symbol id="i-flip" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3M18 3v4h-4M6 21v-4h4"/></symbol>
+  <symbol id="i-sound" viewBox="0 0 24 24"><path fill="currentColor" d="M4 9h4l5-4v14l-5-4H4z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></symbol>
+  <symbol id="i-pdf" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M6 2h9l5 5v15H6zM14 2v6h6"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 13h6M9 17h6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+</svg>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

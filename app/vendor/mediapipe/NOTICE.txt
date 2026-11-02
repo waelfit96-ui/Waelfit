@@ -1,0 +1,3 @@
+MediaPipe Tasks Vision 0.10.14 (c) Google LLC, Apache License 2.0.
+https://github.com/google-ai-edge/mediapipe
+Pose Landmarker models (lite, full) from https://ai.google.dev/edge/mediapipe/solutions/vision/pose_landmarker , Apache License 2.0.
