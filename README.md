@@ -54,11 +54,17 @@ You can edit files directly on github.com: open a file, click the pencil icon, m
 | About text | `<!-- About -->` |
 | Prices | `<!-- Pricing -->`; also update the FAQ, the contact form options and `legal.html` → Terms |
 | Gallery photos | `<!-- Gallery -->`, one `<figure>` per photo (`g-wide` = landscape photo, `g-tall` = portrait photo) |
+| Client reviews | `<!-- Reviews -->`, one `<figure class="testi">` per review |
 | FAQ | `<!-- FAQ -->`, one `<details>` per question |
 | WhatsApp number | Search for `5511985636163` and replace every match |
 | Email | Search for `waelfit01@gmail.com` and replace every match |
 
 **Swapping a photo:** upload the new image to `images/`, then change the `src="images/..."` that points to it. Keep photos under ~400 KB so the page loads fast on phones.
+
+**Forms (sign-up and reviews):** both forms on the home page are emailed to `waelfit01@gmail.com` by [FormSubmit](https://formsubmit.co) (free, no account).
+The very first time a form is sent, FormSubmit emails you an **Activate Form** link: click it once, and every message after that arrives directly.
+A review does not appear on the site by itself. When one arrives by email, copy a `<figure class="testi">` block under `<!-- Reviews -->` and paste in the text, name and country.
+To use another inbox, change the address in `FORM_URL` near the bottom of `index.html`.
 
 **Booking buttons:** any link with `data-wa="..."` opens WhatsApp with that message already typed, so you only need to edit the text inside `data-wa`.
 
